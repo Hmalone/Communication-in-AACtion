@@ -1,13 +1,13 @@
 import React from "react"
 import "./style.css"
 import "tailwindcss/lib/css/preflight.css"
-import ServiceLandingPage from "demos/ServiceLandingPage"
-import AnimationRevealPage from "helpers/AnimationRevealPage"
+import LandingPage from "Pages/LandingPage"
+import AnimationRevealPage from "Treact/helpers/AnimationRevealPage"
 
 function App() {
   return (
     <AnimationRevealPage>
-      <ServiceLandingPage />
+      <LandingPage />
     </AnimationRevealPage>
   )
 }
