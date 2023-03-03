@@ -18,7 +18,31 @@ app.post("/account", async (request, response) => {
     try {
         await account.save();
         response.send(account);
+    } catch (error){
+        response.status(500).send(error);
     }
-})
+});
+
+app.patch("/account/:id", async (request, response) => {
+    try {
+      await accountModel.findByIdAndUpdate(request.params.id, request.body);
+      await accountModel.save();
+      response.send(food);
+    } catch (error) {
+      response.status(500).send(error);
+    }
+});
+
+app.delete("/account/:id", async (request, response) => {
+    try {
+      const account = await accountModel.findByIdAndDelete(request.params.id);
+  
+      if (!account) response.status(404).send("No account found");
+      response.status(200).send();
+    } catch (error) {
+      response.status(500).send(error);
+    }
+});
+
 
 module.exports = app;
