@@ -7,7 +7,7 @@ import Header from "Treact/components/headers/light.js";
 import Footer from "Treact/components/footers/Footer.js";
 import ContactUsForm from "Treact/components/forms/TwoColContactUsWithIllustrationFullForm.js";
 import ContactDetails from "Treact/components/cards/ThreeColContactDetails.js";
-
+import AdminDashForm from "Treact/components/forms/TwoColAdminDash.js";
 
 const Address = tw.span`leading-relaxed`;
 const AddressLine = tw.span`block`;
@@ -18,11 +18,11 @@ export default () => {
   return (
     <AnimationRevealPage>
       <Header />
-      <ContactUsForm />
+      <AdminDashForm />
       <ContactDetails
         cards={[
           {
-            title: "Pennsylvannia",
+            title: "test in here",
             description: (
               <>
                 <Address>
