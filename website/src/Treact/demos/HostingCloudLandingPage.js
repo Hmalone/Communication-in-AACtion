@@ -6,7 +6,7 @@ import MainFeature from "Treact/components/features/TwoColWithButton.js";
 import Pricing from "Treact/components/pricing/ThreePlansWithHalfPrimaryBackground.js";
 import Testimonial from "Treact/components/testimonials/SimplePrimaryBackground.js";
 import FAQ from "Treact/components/faqs/TwoColumnPrimaryBackground.js";
-import Footer from "Treact/components/footers/FiveColumnDark.js";
+import Footer from "Treact/components/footers/Footer.js";
 import serverRedundancyIllustrationImageSrc from "images/server-redundancy-illustration.svg"
 import serverSecureIllustrationImageSrc from "images/server-secure-illustration.svg"
 

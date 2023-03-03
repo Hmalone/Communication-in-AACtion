@@ -5,9 +5,7 @@ import { css } from "styled-components/macro"; //eslint-disable-line
 import HeaderBase, { NavLinks, NavLink, PrimaryLink } from "Treact/components/headers/light.js";
 import { SectionHeading } from "Treact/components/misc/Headings.js";
 import { SectionDescription } from "Treact/components/misc/Typography.js";
-import { PrimaryButton as PrimaryButtonBase } from "Treact/components/misc/Buttons.js";
 import { Container, ContentWithVerticalPadding } from "Treact/components/misc/Layouts.js";
-import { ReactComponent as CheckboxIcon } from "feather-icons/dist/icons/check-circle.svg";
 import { ReactComponent as QuotesLeftIconBase } from "Treact/images/quotes-l.svg"
 import { ReactComponent as SvgDecoratorBlob1 } from "Treact/images/dot-pattern.svg"
 
@@ -17,8 +15,7 @@ const Column = tw.div``;
 const TextColumn = tw(Column)`mr-auto lg:mr-0 max-w-lg lg:max-w-xl xl:max-w-2xl`;
 const Heading = tw(SectionHeading)`text-left text-primary-900 leading-snug xl:text-6xl`;
 const Phrase = tw(SectionHeading)`text-left text-gray-900 leading-snug xl:text-4xl`;
-const Description = tw(SectionDescription)`mt-4 lg:text-base text-gray-700 max-w-lg`;
-const PrimaryButton = tw(PrimaryButtonBase)`mt-8 inline-block w-56 tracking-wide text-center py-5`;
+const Description = tw(SectionDescription)`mt-4 lg:text-base text-gray-700 max-w-lg xl:text-xl`;
 const ImageColumn = tw(Column)`ml-auto lg:mr-0 relative mt-16 lg:mt-0 lg:ml-32`;
 const ImageContainer = tw.div`relative z-40 transform xl:-translate-x-24 xl:-translate-y-16`;
 const Image = tw.img`max-w-full w-96 rounded-t sm:rounded relative z-20`;
@@ -39,7 +36,6 @@ export default ({
   description = "Providing neurodiversity-affirming speech and language therapy services.",
   imageSrc = "https://static.wixstatic.com/media/d6798f_6cb740db6c4c45a889fdfdbbc6ef6a27~mv2.png/v1/fill/w_592,h_820,al_c,lg_1,q_90,enc_auto/Standing_PNG.png",
   imageDecoratorBlob = true,
-  primaryButtonUrl = "https://google.com",
   buttonRounded = true,
   testimonial = {
     quote: "Desired quote goes here.",
@@ -54,7 +50,7 @@ export default ({
       <NavLink href="/#">Schedule</NavLink>
       <NavLink href="/#">Testimonials</NavLink>
       <NavLink href="/#">Newsletter</NavLink>
-      <NavLink href="/#">Contact Me</NavLink>
+      <NavLink href="/ContactUs">Contact Me</NavLink>
     </NavLinks>,
     <NavLinks key={2}>
       <NavLink href="/#" tw="lg:ml-12!">
