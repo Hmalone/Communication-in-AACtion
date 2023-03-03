@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 
 mongoose.connect(
-  "mongodb+srv://Hunter:HMpass@website.c5x0mfa.mongodb.net/?retryWrites=true&w=majority",
+  "mongodb+srv://<username>:<password>@website.c5x0mfa.mongodb.net/?retryWrites=true&w=majority",
   {
     useNewUrlParser: true,
     useFindAndModify: false,
