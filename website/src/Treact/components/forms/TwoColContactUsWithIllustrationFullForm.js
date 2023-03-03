@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
 import { SectionHeading, Subheading as SubheadingBase } from "Treact/components/misc/Headings.js";
 import { PrimaryButton as PrimaryButtonBase } from "Treact/components/misc/Buttons.js";
-import EmailIllustrationSrc from "images/email-illustration.svg";
+//import EmailIllustrationSrc from "images/email-illustration.svg";
 
 const Container = tw.div`relative`;
 const TwoColumn = tw.div`flex flex-col md:flex-row justify-between max-w-screen-xl mx-auto py-20 md:py-24`;
@@ -36,7 +36,7 @@ const SubmitButton = tw(PrimaryButtonBase)`inline-block mt-8`
 export default ({
   subheading = "Contact Us",
   heading = <>Feel free to <span tw="text-primary-500">get in touch</span><wbr/> with us.</>,
-  description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  description = "Please feel free to reach out with any questions or concerns, or if you are interested in scheduling an information meeting.",
   submitButtonText = "Send",
   formAction = "#",
   formMethod = "get",
@@ -48,7 +48,7 @@ export default ({
     <Container>
       <TwoColumn>
         <ImageColumn>
-          <Image imageSrc={EmailIllustrationSrc} />
+          {/* <Image imageSrc={EmailIllustrationSrc} /> */}
         </ImageColumn>
         <TextColumn textOnLeft={textOnLeft}>
           <TextContent>
@@ -56,9 +56,10 @@ export default ({
             <Heading>{heading}</Heading>
             {description && <Description>{description}</Description>}
             <Form action={formAction} method={formMethod}>
+              <Input type="text" name="first_name" placeholder="First Name" />
+              <Input type="text" name="last_name" placeholder="Last Name" />
               <Input type="email" name="email" placeholder="Your Email Address" />
-              <Input type="text" name="name" placeholder="Full Name" />
-              <Input type="text" name="subject" placeholder="Subject" />
+              <Input type="text" name="phone_number" placeholder="Phone Number" />
               <Textarea name="message" placeholder="Your Message Here" />
               <SubmitButton type="submit">{submitButtonText}</SubmitButton>
             </Form>
