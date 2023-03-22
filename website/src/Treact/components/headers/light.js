@@ -2,13 +2,16 @@ import React from "react";
 import { motion } from "framer-motion";
 import tw from "twin.macro";
 import styled from "styled-components";
-import { css } from "styled-components/macro"; //eslint-disable-line
+// eslint-disable-next-line
+import { css } from "styled-components/macro"; 
 
 import useAnimatedNavToggler from "../../helpers/useAnimatedNavToggler.js";
 
 import logo from "../../images/logo.svg";
 import { ReactComponent as MenuIcon } from "feather-icons/dist/icons/menu.svg";
 import { ReactComponent as CloseIcon } from "feather-icons/dist/icons/x.svg";
+// eslint-disable-next-line
+import ContactUs from "Treact/pages/ContactUs.js";
 
 const Header = tw.header`
   flex justify-between items-center
@@ -65,37 +68,31 @@ export default ({ roundedHeaderButton = false, logoLink, links, className, colla
    * So If you pass only a single item in the array with only one NavLinks component as root, you will get 2 column header.
    * Left part will be LogoLink, and the right part will be the the NavLinks component you
    * supplied.
-   * Similarly if you pass 2 items in the links array, then you will get 3 columns, the left will be "LogoLink", the center will be the first "NavLinks" component in the array and the right will be the second "NavLinks" component in the links array.
+   * Similarly if you pass 2 items in the links array, then you will get 3 columns, the left will be "LogoLink", the center will be 
+   * the first "NavLinks" component in the array and the right will be the second "NavLinks" component in the links array.
    * You can also choose to directly modify the links here by not passing any links from the parent component and
    * changing the defaultLinks variable below below.
-   * If you manipulate links here, all the styling on the links is already done for you. If you pass links yourself though, you are responsible for styling the links or use the helper styled components that are defined here (NavLink)
+   * If you manipulate links here, all the styling on the links is already done for you. If you pass links yourself though, you are 
+   * responsible for styling the links or use the helper styled components that are defined here (NavLink)
    */
   const defaultLinks = [
     <NavLinks key={1}>
-      <NavLink href="/#">About Me</NavLink>
-      <NavLink href="/#">Services</NavLink>
-      <NavLink href="/#">Schedule</NavLink>
-      <NavLink href="/#">Testimonials</NavLink>
-      <NavLink href="/#">Newsletter</NavLink>
-      <NavLink href="/ContactUs">Contact Me</NavLink>
-      <NavLink href="/#" tw="lg:ml-12!">
+      <NavLink to="/#">About Me</NavLink>
+      <NavLink to="/#">Services</NavLink>
+      <NavLink to="/#">Schedule</NavLink>
+      <NavLink to="/#">Testimonials</NavLink>
+      <NavLink to="/#">Newsletter</NavLink>
+      <NavLink to="/ContactUs">Contact Me</NavLink>
+      <NavLink to="/#" tw="lg:ml-12!">
         Login
       </NavLink>
-      <PrimaryLink css={roundedHeaderButton && tw`rounded-full`}href="/#">Sign Up</PrimaryLink>
+      <PrimaryLink css={roundedHeaderButton && tw`rounded-full`} to="/SignUpPage">Sign Up</PrimaryLink>
     </NavLinks>
   ];
 
   const { showNavLinks, animation, toggleNavbar } = useAnimatedNavToggler();
   const collapseBreakpointCss = collapseBreakPointCssMap[collapseBreakpointClass];
 
-  const defaultLogoLink = (
-    <LogoLink href="/">
-      <img src={logo} alt="logo" />
-      Treact
-    </LogoLink>
-  );
-
-  logoLink = logoLink || defaultLogoLink;
   links = links || defaultLinks;
 
   return (

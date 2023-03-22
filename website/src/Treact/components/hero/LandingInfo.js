@@ -1,13 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
-import { css } from "styled-components/macro"; //eslint-disable-line
-import HeaderBase, { NavLinks, NavLink, PrimaryLink } from "Treact/components/headers/light.js";
+// eslint-disable-next-line
+import { css } from "styled-components/macro";
+import HeaderBase from "Treact/components/headers/light.js";
 import { SectionHeading } from "Treact/components/misc/Headings.js";
 import { SectionDescription } from "Treact/components/misc/Typography.js";
 import { Container, ContentWithVerticalPadding } from "Treact/components/misc/Layouts.js";
-import { ReactComponent as QuotesLeftIconBase } from "Treact/images/quotes-l.svg"
-import { ReactComponent as SvgDecoratorBlob1 } from "Treact/images/dot-pattern.svg"
+import { ReactComponent as QuotesLeftIconBase } from "Treact/images/quotes-l.svg";
+import { ReactComponent as SvgDecoratorBlob1 } from "Treact/images/dot-pattern.svg";
+import image from "../../../Images/Standing_PNG.png"
 
 const Header = tw(HeaderBase)`max-w-none`;
 const Row = tw.div`flex flex-col lg:flex-row justify-between items-center lg:pt-16 max-w-screen-2xl mx-auto sm:px-8`;
@@ -34,36 +36,16 @@ export default ({
   heading = "Gia Adornetto Speech and Language Therapy, LLC",
   phrase = "Communication in AACtion",
   description = "Providing neurodiversity-affirming speech and language therapy services.",
-  imageSrc = "https://static.wixstatic.com/media/d6798f_6cb740db6c4c45a889fdfdbbc6ef6a27~mv2.png/v1/fill/w_592,h_820,al_c,lg_1,q_90,enc_auto/Standing_PNG.png",
+  imageSrc = image,
   imageDecoratorBlob = true,
-  buttonRounded = true,
   testimonial = {
     quote: "Desired quote goes here.",
     customerName: "Gia Adornetto"
   }
 }) => {
-  const buttonRoundedCss = buttonRounded && tw`rounded-full`;
-  const navLinks = [
-    <NavLinks key={1}>
-      <NavLink href="/#">About Me</NavLink>
-      <NavLink href="/#">Services</NavLink>
-      <NavLink href="/#">Schedule</NavLink>
-      <NavLink href="/#">Testimonials</NavLink>
-      <NavLink href="/#">Newsletter</NavLink>
-      <NavLink href="/ContactUs">Contact Me</NavLink>
-    </NavLinks>,
-    <NavLinks key={2}>
-      <NavLink href="/#" tw="lg:ml-12!">
-        Login
-      </NavLink>
-      <PrimaryLink css={buttonRoundedCss} href="/#">
-        Sign Up
-      </PrimaryLink>
-    </NavLinks>
-  ];
   return (
     <>
-      <Header links={navLinks} />
+      <Header/>
       <Container>
         <ContentWithVerticalPadding>
           <Row>
