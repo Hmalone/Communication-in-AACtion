@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AnimationRevealPage from "Treact/helpers/AnimationRevealPage.js";
 import { Container as ContainerBase } from "Treact/components/misc/Layouts";
 import tw from "twin.macro";
@@ -29,11 +29,41 @@ const SubmitButton = styled.button`
   }
 `;
 
-export default ({
-  headingText = "Create an Account",
-  submitButtonText = "Sign Up",
-  SubmitButtonIcon = SignUpIcon,
-}) => (
+export default function AccountForm(){
+  function handleSubmit(e){
+    e.preventDefault();
+    
+    if(email == ""){
+      alert("Please enter an email.");
+    }else if(password == ""){
+      alert("Please enter a password.");
+    }else if(repassword == ""){
+      alert("Please re-enter a password.");
+    }else if(password != repassword){
+      alert("Passwords do no match, please re-enter passwords.");
+    }else if(firstName == ""){
+      alert("Please enter your first name.");
+    }else if(lastName == ""){
+      alert("Please enter your last name.");
+    }
+
+    
+  }
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [repassword, setRepassword] = useState('');
+  const [firstName, setFristName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [cellNumber, setCellNumber] = useState('');
+  const [address, setAddress] = useState('');
+  const [childName, setChildName] = useState('');
+  const [childAge, setChildAge] = useState('');
+  const [childGrade, setChildGrade] = useState('');
+  const headingText = "Create an Account";
+  const submitButtonText = "Sign Up";
+  const SubmitButtonIcon = SignUpIcon;
+  return (
   <AnimationRevealPage>
     <Container>
       <Content>
@@ -42,11 +72,11 @@ export default ({
             <Heading>{headingText}</Heading>
             <FormContainer>
               <Form>
-                <Input type="email" placeholder="Email" />
-                <Input type="password" placeholder="Password" />
-                <Input type="repeatPassword" placeholder="Repeat Password" />
-                <Input type="firstName" placeholder="First Name" />
-                <Input type="lastName" placeholder="Last Name" />
+                <Input type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
+                <Input type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
+                <Input type="repeatPassword" placeholder="Repeat Password" value={repassword} onChange={e => setRepassword(e.target.value)} />
+                <Input type="firstName" placeholder="First Name" value={firstName} onChange={e => setFristName(e.target.value)} />
+                <Input type="lastName" placeholder="Last Name" value={lastName} onChange={e => setLastName(e.target.value)} />
               </Form>
             </FormContainer>
           </MainContent>
@@ -54,20 +84,20 @@ export default ({
         <MainContainer>
           <MainContent>
             <FormContainer>
-              <Form>
-                <Input type="cellNumber" placeholder="Cell Number" />
-                <Input type="address" placeholder="Address" />
-                <Input type="childName" placeholder="Child Name" />
-                <Input type="childAge" placeholder="Child Birthday" />
-                <Input type="childGrade" placeholder="Child Grade" />
-                <SubmitButton type="submit">
+              <Form onSubmit={handleSubmit}>
+                <Input type="cellNumber" placeholder="Cell Number" value={cellNumber} onChange={e => setCellNumber(e.target.value)} />
+                <Input type="address" placeholder="Address" value={address} onChange={e => setAddress(e.target.value)}/>
+                <Input type="childName" placeholder="Child Name" value={childName} onChange={e => setChildName(e.target.value)}/>
+                <Input type="date" placeholder="Child Birthday" value={childAge} onChange={e => setChildAge(e.target.value)}/>
+                <Input type="childGrade" placeholder="Child Grade" value={childGrade} onChange={e => setChildGrade(e.target.value)}/>
+                <SubmitButton type="submit" >
                     <SubmitButtonIcon className="icon" />
                     <span className="text">{submitButtonText}</span>
                   </SubmitButton>
                   <p tw="mt-8 text-sm text-gray-600 text-center">
                     Already have an account?{" "}
                     <Link to={SignInPage} tw="border-b border-gray-500 border-dotted">
-                      Sign In
+                      Sign In 
                     </Link>
                   </p>
               </Form>
@@ -76,5 +106,6 @@ export default ({
         </MainContainer>
       </Content>
     </Container>
-  </AnimationRevealPage>
-);
+   </AnimationRevealPage>
+  );
+}

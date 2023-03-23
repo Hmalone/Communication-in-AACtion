@@ -9,10 +9,11 @@ import AdminDash from "Pages/AdminDash"
 import AnimationRevealPage from "Treact/helpers/AnimationRevealPage"
 import { Route, Routes } from "react-router-dom"
 
+
 function App() {
   return (
-      <LandingPage /> 
-  )
+      <SignUpPage /> 
+     )
 }
 
 export default App
