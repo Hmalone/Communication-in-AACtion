@@ -11,7 +11,7 @@ import logo from "../../images/logo.svg";
 import { ReactComponent as MenuIcon } from "feather-icons/dist/icons/menu.svg";
 import { ReactComponent as CloseIcon } from "feather-icons/dist/icons/x.svg";
 // eslint-disable-next-line
-import ContactUs from "Treact/pages/ContactUs.js";
+import ContactUs from "Pages/ContactUs.js";
 
 const Header = tw.header`
   flex justify-between items-center

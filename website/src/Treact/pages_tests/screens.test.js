@@ -1,8 +1,8 @@
 import {expect, jest, test} from '@jest/globals';
-import ContactUs from 'Treact/pages/ContactUs';
+import ContactUs from 'Pages/ContactUs';
 import renderer from 'react-test-renderer';
 import LandingPage from 'Pages/LandingPage';
-import AdminDash from 'Treact/pages/AdminDash';
+import AdminDash from 'Pages/AdminDash';
 //import AboutUs from 'Treact/pages/AboutUs';
 
 test("contact page test", () => {
