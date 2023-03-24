@@ -1,5 +1,5 @@
 import {expect, jest, test} from '@jest/globals';
-import ContactUs from 'Pages/ContactUs';
+import ContactUs from 'Pages/ContactUs.js';
 import renderer from 'react-test-renderer';
 
 test("contact page test", () => {

@@ -1,6 +1,6 @@
 import {expect, jest, test} from '@jest/globals';
 import renderer from 'react-test-renderer';
-import Calendar from 'Pages/CalendarPage';
+import Calendar from 'Pages/CalendarPage.js';
 
 
 test("calendar page test", () => {

@@ -1,6 +1,6 @@
 import {expect, jest, test} from '@jest/globals';
 import renderer from 'react-test-renderer';
-import AdminDash from 'Pages/AdminDash';
+import AdminDash from 'Pages/AdminDash.js';
 
 test("admin dash test", () => {
     const adt_tree = renderer.create(<AdminDash/>).toJSON();
