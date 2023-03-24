@@ -4,14 +4,14 @@ import tw from "twin.macro";
 import styled from "styled-components";
 // eslint-disable-next-line
 import { css } from "styled-components/macro"; 
+import { Link } from "react-router-dom";
 
 import useAnimatedNavToggler from "../../helpers/useAnimatedNavToggler.js";
+import ContactUs from "Pages/ContactUs.js";
+import SignUpPage from "Pages/SignUpPage.js";
 
-import logo from "../../images/logo.svg";
 import { ReactComponent as MenuIcon } from "feather-icons/dist/icons/menu.svg";
 import { ReactComponent as CloseIcon } from "feather-icons/dist/icons/x.svg";
-// eslint-disable-next-line
-import ContactUs from "Pages/ContactUs.js";
 
 const Header = tw.header`
   flex justify-between items-center
@@ -82,11 +82,11 @@ export default ({ roundedHeaderButton = false, logoLink, links, className, colla
       <NavLink to="/#">Schedule</NavLink>
       <NavLink to="/#">Testimonials</NavLink>
       <NavLink to="/#">Newsletter</NavLink>
-      <NavLink to="/ContactUs">Contact Me</NavLink>
+      <NavLink to={ContactUs}>Contact Me</NavLink>
       <NavLink to="/#" tw="lg:ml-12!">
         Login
       </NavLink>
-      <PrimaryLink css={roundedHeaderButton && tw`rounded-full`} to="/SignUpPage">Sign Up</PrimaryLink>
+      <PrimaryLink css={roundedHeaderButton && tw`rounded-full`} to={SignUpPage}>Sign Up</PrimaryLink>
     </NavLinks>
   ];
 
