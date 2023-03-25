@@ -1,22 +1,17 @@
-const express = require("express");
 const mongoose = require("mongoose");
-const accountRouter = require("./routes/accountRoutes.js");
 
-const app = express();
+exports.connect = function(){
+  mongoose.connect(
+    "mongodb+srv://Hunter:HMpass@website.c5x0mfa.mongodb.net/?retryWrites=true&w=majority",
+    {
+      useNewUrlParser: true,
+    }
+  );
+}
 
-app.use(express.json());
+exports.disconnect = async function(){
+  await mongoose.connection.close();
+}
 
-mongoose.connect(
-  "mongodb+srv://<username>:<password>@website.c5x0mfa.mongodb.net/?retryWrites=true&w=majority",
-  {
-    useNewUrlParser: true,
-    useFindAndModify: false,
-    useUnifiedTopology: true
-  }
-);
 
-app.use(accountRouter);
 
-app.listen(3000, () => {
-  console.log("Server is running...");
-});

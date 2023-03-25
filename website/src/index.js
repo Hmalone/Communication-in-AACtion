@@ -2,14 +2,27 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import LandingPage from 'Pages/LandingPage';
+import ContactUs from 'Pages/ContactUs';
+import SignInPage from 'Pages/SignInPage';
+import SignUpPage from 'Pages/SignUpPage';
+import { NavLink } from 'Treact/components/headers/light';
+import { Routes } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <React.StrictMode>
-      <App />
+      <NavLink>
+        <Routes>
+          <Route path='/' element={<LandingPage/>} />
+          <Route path='ContactUs' element={<ContactUs/>} />
+          <Route path='SignInPage' element={<SignInPage/>} />
+          <Route path='SignUpPage' element={<SignUpPage/>} />
+        </Routes>
+      </NavLink>
     </React.StrictMode>
   </BrowserRouter>
 );

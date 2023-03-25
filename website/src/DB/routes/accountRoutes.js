@@ -1,6 +1,8 @@
-const express = require("express");
+/*const express = require("express");
 const accountModel = require("../models/account.js");
 const app = express();
+
+app.use(express.json())
 
 app.get("/accounts", async (request, response) => {
   const accounts = await accountModel.find({});
@@ -24,10 +26,12 @@ app.post("/account", async (request, response) => {
 });
 
 app.patch("/account/:id", async (request, response) => {
+    const account = new accountModel(request.body);
+
     try {
       await accountModel.findByIdAndUpdate(request.params.id, request.body);
       await accountModel.save();
-      response.send(request.account);
+      response.send(account);
     } catch (error) {
       response.status(500).send(error);
     }
@@ -46,3 +50,4 @@ app.delete("/account/:id", async (request, response) => {
 
 
 module.exports = app;
+*/

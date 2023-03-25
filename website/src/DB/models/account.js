@@ -44,6 +44,40 @@ const AccountSchema = new mongoose.Schema({
     child: [ChildSchema],
   });
   
-  const Account = mongoose.model("Account", AccountSchema);
+const accountModel = mongoose.model("Account", AccountSchema);
   
-  module.exports = Account;
+exports.readAll = async function(){
+    let accounts = await accountModel.find();
+    return accounts;
+  }
+
+exports.read = async function(id){
+    let account = await accountModel.findById(id);
+    return account;
+  }
+
+exports.create = async function(newAccount){
+    const account = new accountModel(newAccount);
+    await account.save();
+    return account;
+  }
+
+exports.del = async function(id){
+    let account = await accountModel.findByIdAndDelete(id);
+    return account;
+} 
+
+exports.deleteAll = async function(){
+    await accountModel.deleteMany();
+}
+
+exports.update = async function(id, updatedAccount){
+    let account = await accountModel.findByIdAndUpdate(id, updatedAccount);
+    await account.save();
+    return account;
+}
+
+exports.login = async function(email, pass){
+    let account = await accountModel.findOne({email:email, password:pass});
+    return account;
+}

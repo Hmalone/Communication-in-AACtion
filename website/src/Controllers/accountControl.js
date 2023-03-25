@@ -1,4 +1,5 @@
-const AccountDB = require("../DB/routes/accountRoutes.js");
+const accountDB = require("../DB/models/account");
+
 
 export class Child{
     constructor(childName, childGrade, childBirthday){
@@ -15,7 +16,7 @@ export class Child{
         return this.childGrade;
     }
 
-    getBirthday(){
+    getBirthday(){ 
         return this.childBirthday;
     }
 }
@@ -30,8 +31,39 @@ export class Account{
         this.phoneNumber = phoneNumber;
         this.child = child;
     }
-
-    create(){
-        return AccountDB.post(this.email, this.password, this.firstName, this.lastName, this.address, this.phoneNumber, this.child.getName(), this.child.getGrade(), this.child.getBirthday())
-    }
 }
+
+/*exports.getAll = async function(req,res){
+    res.status(200);
+    res.send(await accountDB.readAll());
+    res.end();
+}
+
+exports.get = function(req,res){
+    let id = req.params.id;
+    let found = accountDB.read(id);
+
+    if(found !== null){
+        res.status(200);
+        res.send(found);
+    }
+    else{
+        res.status(404);
+        res.send({msg:"Account not found."});
+    }
+    res.end();
+}
+
+exports.postCreateOrUpdate = function(req,res){
+    let newAccount = {};
+    newAccount.email = req.body.email;
+    newAccount.password = req.body.password;
+    newAccount.firstName = req.body.firstName;
+    newAccount.lastName = req.body.lastName;
+    newAccount.address = req.body.address;
+    newAccount.phoneNumber = req.body.phoneNumber;
+
+    if(req.body.id){
+
+    }
+}*/

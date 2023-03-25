@@ -48,12 +48,12 @@ export default function AccountForm(){
       alert("Please enter your last name.");
     }
 
-    var newChild = new Child();
+    /*var newChild = new Child();
     if(childName != "" || childGrade != "" || childAge != null){
       newChild = new Child(childName, childGrade, childAge);
     }
     var newAccount = new Account(email, password, firstName, lastName, address, cellNumber, newChild);
-    console.log(newAccount);
+    console.log(newAccount);*/
   }
 
   const [email, setEmail] = useState('');
