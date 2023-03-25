@@ -27,7 +27,7 @@ app.patch("/account/:id", async (request, response) => {
     try {
       await accountModel.findByIdAndUpdate(request.params.id, request.body);
       await accountModel.save();
-      response.send(food);
+      response.send(request.account);
     } catch (error) {
       response.status(500).send(error);
     }

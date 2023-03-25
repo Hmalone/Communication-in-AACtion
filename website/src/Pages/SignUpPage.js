@@ -8,6 +8,7 @@ import illustration from "Treact/images/signup-illustration.svg";
 import { ReactComponent as SignUpIcon } from "feather-icons/dist/icons/user-plus.svg";
 import SignInPage from "./SignInPage";
 import { Link } from "react-router-dom";
+import { Account, Child} from "Controllers/accountControl";
 
 
 const Container = tw(ContainerBase)`min-h-screen bg-primary-900 text-white font-medium flex justify-center -m-8`;
@@ -47,7 +48,12 @@ export default function AccountForm(){
       alert("Please enter your last name.");
     }
 
-    
+    var newChild = new Child();
+    if(childName != "" || childGrade != "" || childAge != null){
+      newChild = new Child(childName, childGrade, childAge);
+    }
+    var newAccount = new Account(email, password, firstName, lastName, address, cellNumber, newChild);
+    console.log(newAccount);
   }
 
   const [email, setEmail] = useState('');
