@@ -6,6 +6,7 @@ import styled from "styled-components";
 //import { css } from "styled-components/macro"; //eslint-disable-line
 //import illustration from "Treact/images/signup-illustration.svg";
 import { ReactComponent as SignUpIcon } from "feather-icons/dist/icons/user-plus.svg";
+import Footer from "Treact/components/footers/Footer.js";
 import SignInPage from "./SignInPage";
 import { Link } from "react-router-dom";
 import { Account, Child} from "Controllers/accountControl";
@@ -102,9 +103,9 @@ export default function AccountForm(){
                   </SubmitButton>
                   <p tw="mt-8 text-sm text-gray-600 text-center">
                     Already have an account?{" "}
-                    <Link to={SignInPage} tw="border-b border-gray-500 border-dotted">
+                    <a href="../SignInPage" tw="border-b border-gray-500 border-dotted">
                       Sign In 
-                    </Link>
+                    </a>
                   </p>
               </Form>
             </FormContainer>
@@ -112,6 +113,7 @@ export default function AccountForm(){
         </MainContainer>
       </Content>
     </Container>
+    <Footer/>
    </AnimationRevealPage>
   );
 }

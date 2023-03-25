@@ -7,7 +7,7 @@ import styled from "styled-components";
 import image from "../Images/Client_pic_1_PNG.png"
 //import illustration from "Treact/images/login-illustration.svg";
 import { ReactComponent as LoginIcon } from "feather-icons/dist/icons/log-in.svg";
-import SignUpPage from "./SignUpPage";
+import Footer from "Treact/components/footers/Footer.js";
 import { Link } from "react-router-dom";
 
 const Container = tw(ContainerBase)`min-h-screen bg-primary-900 text-white font-medium flex justify-center -m-8`;
@@ -64,9 +64,9 @@ export default ({
               </p>
               <p tw="mt-8 text-sm text-gray-600 text-center">
                 Dont have an account?{" "}
-                <Link to={SignUpPage} tw="border-b border-gray-500 border-dotted">
+                <a href="../SignUpPage" tw="border-b border-gray-500 border-dotted">
                   Sign Up
-                </Link>
+                </a>
               </p>
             </FormContainer>
           </MainContent>
@@ -76,5 +76,6 @@ export default ({
         </IllustrationContainer>
       </Content>
     </Container>
+    <Footer/>
   </AnimationRevealPage>
 );

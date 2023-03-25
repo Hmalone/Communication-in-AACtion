@@ -1,4 +1,6 @@
-import React from 'react';
+import React from "react"
+import "./style.css"
+import "tailwindcss/lib/css/preflight.css"
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
@@ -6,6 +8,7 @@ import LandingPage from 'Pages/LandingPage';
 import ContactUs from 'Pages/ContactUs';
 import SignInPage from 'Pages/SignInPage';
 import SignUpPage from 'Pages/SignUpPage';
+import CalendarPage from 'Pages/CalendarPage';
 import { NavLink } from 'Treact/components/headers/light';
 import { Routes } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
@@ -21,6 +24,7 @@ root.render(
           <Route path='ContactUs' element={<ContactUs/>} />
           <Route path='SignInPage' element={<SignInPage/>} />
           <Route path='SignUpPage' element={<SignUpPage/>} />
+          <Route path='CalendarPage' element={<CalendarPage/>} />
         </Routes>
       </NavLink>
     </React.StrictMode>
