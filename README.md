@@ -4,3 +4,9 @@ Repository for Communication in AACtion website
 https://docs.google.com/spreadsheets/d/1LX6Rhro9DjCI5u8VajkTOQE8cOwPgtxfwo_S61p1JPw/edit?usp=sharing 
 ## Design and UI  
 https://docs.google.com/document/d/1H7uLBOrh8Q7xQtmfXGPnv_wTvuAGXyN1mW2BoeDf7N4/edit?usp=sharing  
+## Testing Coverage
+<img width="599" alt="Screenshot 2023-03-25 at 11 28 19 AM" src="https://user-images.githubusercontent.com/54945471/227726797-ade92360-1813-45a2-a0ce-b5f192be40f7.png">
+The main issue we are dealing with in terms of testing is <Link> components. Currently, our test for the SignUp page fails, citing problems with the <Link> components, which is why coverage for that file is low.
+
+## How to Run
+To run our website, use the `npm start` command. We have not fully figured out the page navigation yet and you can not switch to each page from the others, so to run each page just replace the import name as desired in `App.js`
