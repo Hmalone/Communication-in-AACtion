@@ -9,4 +9,4 @@ https://docs.google.com/document/d/1H7uLBOrh8Q7xQtmfXGPnv_wTvuAGXyN1mW2BoeDf7N4/
 The main issue we are dealing with in terms of testing is <Link> components. Currently, our test for the SignUp page fails, citing problems with the <Link> components, which is why coverage for that file is low.
 
 ## How to Run
-To run our website, use the `npm start` command. We have not fully figured out the page navigation yet and you can not switch to each page from the others, so to run each page just replace the import name as desired in `App.js`
+To run our website, use the `npm start` command. Navigate to other pages using the navbar at the top. If the page has not been created yet then you will just be returned to the landing page.
