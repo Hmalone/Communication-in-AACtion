@@ -22,6 +22,14 @@ const TextColumn = styled(Column)(props => [
   tw`md:w-7/12 mt-16 md:mt-0`,
   props.textOnLeft ? tw`md:mr-12 lg:mr-16 md:order-first` : tw`md:ml-12 lg:ml-16 md:order-last`
 ]);
+const CalendarContainer = styled.div`
+        /* ~~~ container styles ~~~ */
+        max-width: 600px;
+        margin: auto;
+        margin-top: 20px;
+        padding: 10px;
+        border-radius: 3px;
+        `; //background-color: #d4f7d4;
 
 export default ({
     heading1 = "Schedule",
@@ -30,14 +38,6 @@ export default ({
 ) => {
     const [date, setDate] = useState(new Date())
     const [showTime, setShowTime] = useState(false);
-    const CalendarContainer = styled.div`
-        /* ~~~ container styles ~~~ */
-        max-width: 600px;
-        margin: auto;
-        margin-top: 20px;
-        padding: 10px;
-        border-radius: 3px;
-        `; //background-color: #d4f7d4;
 
     return (
         <AnimationRevealPage>
@@ -49,7 +49,7 @@ export default ({
                         <Heading1>{heading1}</Heading1>
                         <div>
                             <CalendarContainer>
-                            <Calendar calendarType = 'US' onChange={setDate} value={date} onClickDay={() => setShowTime(true)}/>
+                                <Calendar calendarType = 'US' onChange={setDate} value={date} onClickDay={() => setShowTime(true)}/>
                             </CalendarContainer>
                         </div>
                     </div>
