@@ -3,8 +3,8 @@ import AnimationRevealPage from "Treact/helpers/AnimationRevealPage.js";
 import { Container as ContainerBase } from "Treact/components/misc/Layouts";
 import tw from "twin.macro";
 import styled from "styled-components";
-import { css } from "styled-components/macro"; //eslint-disable-line
-import illustration from "Treact/images/signup-illustration.svg";
+//import { css } from "styled-components/macro"; //eslint-disable-line
+//import illustration from "Treact/images/signup-illustration.svg";
 import { ReactComponent as SignUpIcon } from "feather-icons/dist/icons/user-plus.svg";
 import SignInPage from "./SignInPage";
 import { Link } from "react-router-dom";

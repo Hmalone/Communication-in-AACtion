@@ -2,22 +2,11 @@ import React from 'react'
 import {useState} from 'react';
 
 import tw from "twin.macro";
-import { SectionDescription } from "Treact/components/misc/Typography.js";
 import { SectionHeading } from "Treact/components/misc/Headings.js";
 import styled from "styled-components";
-const Description = tw(SectionDescription)`mt-4 lg:text-base text-gray-700 max-w-lg xl:text-xl`;
 const Phrase1 = tw(SectionHeading)`mt-2 text-center text-gray-700 leading-snug xl:text-xl`;
 const Phrase2 = tw(SectionHeading)`mt-8 text-center text-gray-700 leading-snug xl:text-xl`;
-
-
-const time = ['08:00','09:00','10:00','11:00','12:00']
-//set times available here; consider out how to set/apply to individual days
-
-function Times(props) {
-    const [event, setEvent] = useState(null)
-    const [info, setInfo] = useState(false)
-
-    const Button = styled.button`
+const Button = styled.button`
         background-color: white;
         color: black;
         padding: 3px 10px;
@@ -25,6 +14,13 @@ function Times(props) {
         border-color: black;
         border-radius: 10px;
     `;
+
+const time = ['08:00','09:00','10:00','11:00','12:00']
+//set times available here; consider out how to set/apply to individual days
+
+function Times(props) {
+    const [event, setEvent] = useState(null)
+    const [info, setInfo] = useState(false)
 
     function displayInfo(e) {
         setInfo(true);
