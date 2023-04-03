@@ -1,4 +1,3 @@
-const { default: AccountForm } = require("Pages/SignUpPage");
 const accountDB = require("../DB/models/account");
 
 
@@ -63,6 +62,10 @@ exports.postCreateOrUpdate = function(req,res){
     newAccount.lastName = req.body.lastName;
     newAccount.address = req.body.address;
     newAccount.phoneNumber = req.body.phoneNumber;
+    newAccount.child.childName = req.body.child.childName;
+    newAccount.child.childAge = req.body.child.childAge;
+    newAccount.child.childGrade = req.body.child.childGrade;
+
 
     if(req.body.id){
         console.log("Update account");
