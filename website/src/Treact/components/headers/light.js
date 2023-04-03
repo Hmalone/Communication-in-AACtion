@@ -4,11 +4,8 @@ import tw from "twin.macro";
 import styled from "styled-components";
 // eslint-disable-next-line
 import { css } from "styled-components/macro"; 
-import { Link } from "react-router-dom";
 
 import useAnimatedNavToggler from "../../helpers/useAnimatedNavToggler.js";
-import ContactUs from "Pages/ContactUs.js";
-import SignUpPage from "Pages/SignUpPage.js";
 
 import { ReactComponent as MenuIcon } from "feather-icons/dist/icons/menu.svg";
 import { ReactComponent as CloseIcon } from "feather-icons/dist/icons/x.svg";
@@ -83,6 +80,8 @@ export default ({ roundedHeaderButton = false, logoLink, links, className, colla
       <NavLink href="/#">Testimonials</NavLink>
       <NavLink href="/#">Newsletter</NavLink>
       <NavLink href="/ContactUs">Contact Me</NavLink>
+      </NavLinks>,
+    <NavLinks key={2}>
       <NavLink href="/SignInPage" tw="lg:ml-12!">
         Login
       </NavLink>

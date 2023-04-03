@@ -13,10 +13,6 @@ const ChildSchema = new mongoose.Schema({
 })
 
 const AccountSchema = new mongoose.Schema({
-    userName: {
-      type: String,
-      required: true,
-    },
     email: {
       type: String,
       required: true,

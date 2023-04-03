@@ -3,7 +3,6 @@ import "./style.css"
 import "tailwindcss/lib/css/preflight.css"
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import LandingPage from 'Pages/LandingPage';
 import ContactUs from 'Pages/ContactUs';
 import SignInPage from 'Pages/SignInPage';

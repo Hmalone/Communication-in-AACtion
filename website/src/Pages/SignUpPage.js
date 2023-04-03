@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import AnimationRevealPage from "Treact/helpers/AnimationRevealPage.js";
 import { Container as ContainerBase } from "Treact/components/misc/Layouts";
 import tw from "twin.macro";
@@ -7,9 +7,6 @@ import styled from "styled-components";
 //import illustration from "Treact/images/signup-illustration.svg";
 import { ReactComponent as SignUpIcon } from "feather-icons/dist/icons/user-plus.svg";
 import Footer from "Treact/components/footers/Footer.js";
-import SignInPage from "./SignInPage";
-import { Link } from "react-router-dom";
-import { Account, Child} from "Controllers/accountControl";
 
 
 const Container = tw(ContainerBase)`min-h-screen bg-primary-900 text-white font-medium flex justify-center -m-8`;
@@ -31,30 +28,52 @@ const SubmitButton = styled.button`
   }
 `;
 
+/* 
+, {
+      method: "POST",
+      body: JSON.stringify({
+        email: email,
+        password: password,
+        firstName: firstName,
+        lastName: lastName,
+        address: address,
+        phoneNumber: cellNumber,
+        child: {
+          childName: childName,
+          childGrade: childGrade,
+          childAge: childAge
+        }  
+      })
+    }
+*/
+
+
 export default function AccountForm(){
-  function handleSubmit(e){
+  async function createAccount(){
+    let response = await fetch("/account");
+    console.log(response);
+    let account = await response.json();
+    alert(account);
+  }
+  
+  async function handleSubmit(e){
     e.preventDefault();
     
-    if(email == ""){
+    if(email === ""){
       alert("Please enter an email.");
-    }else if(password == ""){
+    }else if(password === ""){
       alert("Please enter a password.");
-    }else if(repassword == ""){
+    }else if(repassword === ""){
       alert("Please re-enter a password.");
-    }else if(password != repassword){
+    }else if(password !== repassword){
       alert("Passwords do no match, please re-enter passwords.");
-    }else if(firstName == ""){
+    }else if(firstName === ""){
       alert("Please enter your first name.");
-    }else if(lastName == ""){
+    }else if(lastName === ""){
       alert("Please enter your last name.");
     }
-
-    /*var newChild = new Child();
-    if(childName != "" || childGrade != "" || childAge != null){
-      newChild = new Child(childName, childGrade, childAge);
-    }
-    var newAccount = new Account(email, password, firstName, lastName, address, cellNumber, newChild);
-    console.log(newAccount);*/
+    
+    createAccount();
   }
 
   const [email, setEmail] = useState('');
@@ -81,7 +100,7 @@ export default function AccountForm(){
               <Form>
                 <Input type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
                 <Input type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
-                <Input type="repeatPassword" placeholder="Repeat Password" value={repassword} onChange={e => setRepassword(e.target.value)} />
+                <Input type="password" placeholder="Repeat Password" value={repassword} onChange={e => setRepassword(e.target.value)} />
                 <Input type="firstName" placeholder="First Name" value={firstName} onChange={e => setFristName(e.target.value)} />
                 <Input type="lastName" placeholder="Last Name" value={lastName} onChange={e => setLastName(e.target.value)} />
               </Form>

@@ -1,4 +1,4 @@
-/*const express = require('express'); 
+const express = require('express'); 
 const morgan = require('morgan'); 
 const session = require('express-session');
 const cors = require('cors');
@@ -19,13 +19,9 @@ app.use(session({
     saveUninitialized: true
 }));
 
-app.use(express.static('view/build'));// Static server use the folder 'public_html'
-app.use(express.static('public_html'));// Static server use the folder 'public_html'
-
 // User Actions
-app.get('/account', accountControl.getAll );
 app.get('/account/:id',accountControl.get );
-app.post('/user',accountControl.postCreateOrUpdate); 
+app.post('/account',accountControl.postCreateOrUpdate); 
 app.get('/deleteAccount/:id',accountControl.deleteOne); 
 app.post('/updateAccount',accountControl.postCreateOrUpdate);
 app.post('/dologin',accountControl.login); 
@@ -33,4 +29,3 @@ app.get('/loggedAccount',accountControl.loggedUser);
 app.get('/logout',accountControl.logout);
 
 exports.app = app;
-*/

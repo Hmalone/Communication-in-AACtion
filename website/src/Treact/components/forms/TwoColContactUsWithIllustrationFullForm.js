@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
 import { SectionHeading, Subheading as SubheadingBase } from "Treact/components/misc/Headings.js";
 import { PrimaryButton as PrimaryButtonBase } from "Treact/components/misc/Buttons.js";
-//import EmailIllustrationSrc from "images/email-illustration.svg";
+import image from "../../../Images/Standing_PNG.png";
 
 const Container = tw.div`relative`;
 const TwoColumn = tw.div`flex flex-col md:flex-row justify-between max-w-screen-xl mx-auto py-20 md:py-24`;
@@ -34,8 +34,8 @@ const Textarea = styled(Input).attrs({as: "textarea"})`
 const SubmitButton = tw(PrimaryButtonBase)`inline-block mt-8`
 
 export default ({
-  subheading = "Contact Us",
-  heading = <>Feel free to <span tw="text-primary-500">get in touch</span><wbr/> with us.</>,
+  subheading = "Contact Me",
+  heading = <>Feel free to <span tw="text-primary-500">get in touch</span><wbr/> with me.</>,
   description = "Please feel free to reach out with any questions or concerns, or if you are interested in scheduling an information meeting.",
   submitButtonText = "Send",
   formAction = "#",
@@ -48,7 +48,7 @@ export default ({
     <Container>
       <TwoColumn>
         <ImageColumn>
-          {/* <Image imageSrc={EmailIllustrationSrc} /> */}
+          {<Image imageSrc={image} />}
         </ImageColumn>
         <TextColumn textOnLeft={textOnLeft}>
           <TextContent>
