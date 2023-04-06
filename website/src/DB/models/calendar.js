@@ -20,8 +20,9 @@ const CalendarSchema = new mongoose.Schema({
     fridayTimes:{
         type: Array,
     }
-  });
+});
   
-  const Calendar = mongoose.model("Calendar", CalendarSchema);
+const calendarModel = mongoose.model("Calendar", CalendarSchema);
   
-  module.exports = Calendar;
+module.exports = calendarModel;
+
