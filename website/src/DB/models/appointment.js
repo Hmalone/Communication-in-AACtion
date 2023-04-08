@@ -6,8 +6,9 @@ const AppointmentSchema = new mongoose.Schema({
         required: true,
     },
     appointmentDate: {
-        type: Date,
+        type: String,
         required: true,
+        //change type to Date after testing
     },
     location: {
         type: String,
