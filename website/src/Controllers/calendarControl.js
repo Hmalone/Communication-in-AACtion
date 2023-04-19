@@ -1,5 +1,5 @@
 //const AccountDB = require("../DB/routes/accountRoutes.js");
-const CalendarDB = require("../DB/routes/calendarRoutes.js");
+const CalendarDB = require("../DB/models/calendar");
 
 export class Calendar{
     constructor(scheduleId, mondayTimes, tuesdayTimes, wednesdayTimes, thursdayTimes, fridayTimes){
