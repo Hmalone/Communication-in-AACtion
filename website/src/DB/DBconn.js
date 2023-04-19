@@ -8,6 +8,7 @@ exports.connect = function(where){
     uri,
     {
       useNewUrlParser: true,
+      useUnifiedTopology: true,
     }
   );
 }

@@ -51,9 +51,7 @@ const SubmitButton = styled.button`
 export default function AccountForm(){
   async function createAccount(){
     let response = await fetch("/account");
-    console.log(response);
     let account = await response.json();
-    alert(account);
   }
   
   async function handleSubmit(e){
@@ -72,7 +70,6 @@ export default function AccountForm(){
     }else if(lastName === ""){
       alert("Please enter your last name.");
     }
-    
     createAccount();
   }
 

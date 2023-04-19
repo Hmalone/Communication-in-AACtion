@@ -1,0 +1,419 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`contact page test 1`] = `
+<div
+  className="sc-bcXHqe kwmBMO App"
+>
+  <div>
+    <section
+      style={
+        Object {
+          "transform": "translateX(-150%) translateZ(0)",
+        }
+      }
+    >
+      <header
+        className="light__Header-sc-1cpy45h-0 cXEmeu header-light"
+      >
+        <nav
+          className="light__DesktopNavLinks-sc-1cpy45h-12 light___StyledDesktopNavLinks-sc-1cpy45h-13 jNXhxj enBGmP"
+        >
+          <div
+            className="light__NavLinks-sc-1cpy45h-1 hMSPUX"
+          >
+            <a
+              className="light__NavLink-sc-1cpy45h-2 jQCkvf"
+              href="/"
+            >
+              About Me
+            </a>
+            <a
+              className="light__NavLink-sc-1cpy45h-2 jQCkvf"
+              href="/#"
+            >
+              Services
+            </a>
+            <a
+              className="light__NavLink-sc-1cpy45h-2 jQCkvf"
+              href="/CalendarPage"
+            >
+              Schedule
+            </a>
+            <a
+              className="light__NavLink-sc-1cpy45h-2 jQCkvf"
+              href="/#"
+            >
+              Testimonials
+            </a>
+            <a
+              className="light__NavLink-sc-1cpy45h-2 jQCkvf"
+              href="/#"
+            >
+              Newsletter
+            </a>
+            <a
+              className="light__NavLink-sc-1cpy45h-2 jQCkvf"
+              href="/ContactUs"
+            >
+              Contact Me
+            </a>
+          </div>
+          <div
+            className="light__NavLinks-sc-1cpy45h-1 hMSPUX"
+          >
+            <a
+              className="light__NavLink-sc-1cpy45h-2 light___StyledNavLink-sc-1cpy45h-3 jQCkvf fwIKdf"
+              href="/SignInPage"
+            >
+              Login
+            </a>
+            <a
+              className="light__NavLink-sc-1cpy45h-2 light__PrimaryLink-sc-1cpy45h-4 light___StyledPrimaryLink-sc-1cpy45h-5 jQCkvf eNVijO"
+              href="/SignUpPage"
+            >
+              Sign Up
+            </a>
+          </div>
+        </nav>
+        <nav
+          className="light__MobileNavLinksContainer-sc-1cpy45h-7 light___StyledMobileNavLinksContainer-sc-1cpy45h-8 czqxdP lgYQBV"
+        >
+          <div
+            className="light__MobileNavLinks-sc-1cpy45h-10 hGoYAQ light___StyledMobileNavLinks-sc-1cpy45h-11 dgPHUS"
+            style={
+              Object {
+                "display": "none",
+                "transform": "translateX(150%) translateZ(0)",
+              }
+            }
+          >
+            <div
+              className="light__NavLinks-sc-1cpy45h-1 hMSPUX"
+            >
+              <a
+                className="light__NavLink-sc-1cpy45h-2 jQCkvf"
+                href="/"
+              >
+                About Me
+              </a>
+              <a
+                className="light__NavLink-sc-1cpy45h-2 jQCkvf"
+                href="/#"
+              >
+                Services
+              </a>
+              <a
+                className="light__NavLink-sc-1cpy45h-2 jQCkvf"
+                href="/CalendarPage"
+              >
+                Schedule
+              </a>
+              <a
+                className="light__NavLink-sc-1cpy45h-2 jQCkvf"
+                href="/#"
+              >
+                Testimonials
+              </a>
+              <a
+                className="light__NavLink-sc-1cpy45h-2 jQCkvf"
+                href="/#"
+              >
+                Newsletter
+              </a>
+              <a
+                className="light__NavLink-sc-1cpy45h-2 jQCkvf"
+                href="/ContactUs"
+              >
+                Contact Me
+              </a>
+            </div>
+            <div
+              className="light__NavLinks-sc-1cpy45h-1 hMSPUX"
+            >
+              <a
+                className="light__NavLink-sc-1cpy45h-2 light___StyledNavLink-sc-1cpy45h-3 jQCkvf fwIKdf"
+                href="/SignInPage"
+              >
+                Login
+              </a>
+              <a
+                className="light__NavLink-sc-1cpy45h-2 light__PrimaryLink-sc-1cpy45h-4 light___StyledPrimaryLink-sc-1cpy45h-5 jQCkvf eNVijO"
+                href="/SignUpPage"
+              >
+                Sign Up
+              </a>
+            </div>
+          </div>
+          <button
+            className="light__NavToggle-sc-1cpy45h-9 ivICvy closed"
+            onClick={[Function]}
+          >
+            <svg
+              className="light___StyledMenuIcon-sc-1cpy45h-15 dztXwe"
+            >
+              menu.svg
+            </svg>
+          </button>
+        </nav>
+      </header>
+    </section>
+  </div>
+  <div>
+    <section
+      style={
+        Object {
+          "transform": "translateX(150%) translateZ(0)",
+        }
+      }
+    >
+      <div
+        className="TwoColContactUsWithIllustrationFullForm__Container-sc-1ctg13j-0 kcQfV"
+      >
+        <div
+          className="TwoColContactUsWithIllustrationFullForm__TwoColumn-sc-1ctg13j-1 jbJjDt"
+        >
+          <div
+            className="TwoColContactUsWithIllustrationFullForm__Column-sc-1ctg13j-2 TwoColContactUsWithIllustrationFullForm__ImageColumn-sc-1ctg13j-3 eLLYLa kFdVTV"
+          >
+            <div
+              className="TwoColContactUsWithIllustrationFullForm__Image-sc-1ctg13j-5 egMYJu"
+            />
+          </div>
+          <div
+            className="TwoColContactUsWithIllustrationFullForm__Column-sc-1ctg13j-2 TwoColContactUsWithIllustrationFullForm__TextColumn-sc-1ctg13j-4 eLLYLa emiWoc"
+          >
+            <div
+              className="TwoColContactUsWithIllustrationFullForm__TextContent-sc-1ctg13j-6 gNgRqa"
+            >
+              <h5
+                className="sc-dkrFOg TwoColContactUsWithIllustrationFullForm__Subheading-sc-1ctg13j-7 knjPMP iOWoCQ"
+              >
+                Contact Me
+              </h5>
+              <h2
+                className="sc-gswNZR TwoColContactUsWithIllustrationFullForm__Heading-sc-1ctg13j-8 jwsMdx izoCvv"
+              >
+                Feel free to 
+                <span
+                  className="TwoColContactUsWithIllustrationFullForm___StyledSpan-sc-1ctg13j-14 bEGtMf"
+                >
+                  get in touch
+                </span>
+                <wbr />
+                 with me.
+              </h2>
+              <p
+                className="TwoColContactUsWithIllustrationFullForm__Description-sc-1ctg13j-9 hwAtwS"
+              >
+                Please feel free to reach out with any questions or concerns, or if you are interested in scheduling an information meeting.
+              </p>
+              <form
+                action="#"
+                className="TwoColContactUsWithIllustrationFullForm__Form-sc-1ctg13j-10 hZjrZZ"
+                method="get"
+              >
+                <input
+                  className="TwoColContactUsWithIllustrationFullForm__Input-sc-1ctg13j-11 dPgBDL"
+                  name="first_name"
+                  placeholder="First Name"
+                  type="text"
+                />
+                <input
+                  className="TwoColContactUsWithIllustrationFullForm__Input-sc-1ctg13j-11 dPgBDL"
+                  name="last_name"
+                  placeholder="Last Name"
+                  type="text"
+                />
+                <input
+                  className="TwoColContactUsWithIllustrationFullForm__Input-sc-1ctg13j-11 dPgBDL"
+                  name="email"
+                  placeholder="Your Email Address"
+                  type="email"
+                />
+                <input
+                  className="TwoColContactUsWithIllustrationFullForm__Input-sc-1ctg13j-11 dPgBDL"
+                  name="phone_number"
+                  placeholder="Phone Number"
+                  type="text"
+                />
+                <textarea
+                  className="TwoColContactUsWithIllustrationFullForm__Input-sc-1ctg13j-11 TwoColContactUsWithIllustrationFullForm__Textarea-sc-1ctg13j-12 dPgBDL iRNGhh"
+                  name="message"
+                  placeholder="Your Message Here"
+                />
+                <button
+                  className="sc-hLBbgP TwoColContactUsWithIllustrationFullForm__SubmitButton-sc-1ctg13j-13 gEGuXt dfJFLk"
+                  onSubmit={[Function]}
+                  type="submit"
+                >
+                  Send
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div>
+    <section
+      style={
+        Object {
+          "transform": "translateX(-150%) translateZ(0)",
+        }
+      }
+    >
+      <div
+        className="Footer__Container-sc-15u78g2-0 hhdjRf"
+      >
+        <div
+          className="Footer__Content-sc-15u78g2-1 idsppY"
+        >
+          <div
+            className="Footer__FiveColumns-sc-15u78g2-2 bhAHbD"
+          >
+            <div
+              className="Footer__CompanyColumn-sc-15u78g2-4 jFeqeX"
+            >
+              <div
+                className="Footer__LogoContainer-sc-15u78g2-9 fVLZdO"
+              >
+                <h5
+                  className="Footer__LogoText-sc-15u78g2-10 ienmgm"
+                >
+                  Gia Adornetto Speech and Language Therapy, LLC
+                </h5>
+              </div>
+              <p
+                className="Footer__CompanyAddress-sc-15u78g2-11 cKOtrz"
+              >
+                PO Box 5099 Limerick, PA 19468
+              </p>
+              <div
+                className="Footer__SocialLinksContainer-sc-15u78g2-12 vqngJ"
+              >
+                <a
+                  className="Footer__SocialLink-sc-15u78g2-13 iZtgyl"
+                  href="https://www.instagram.com/giaadornettoslp/"
+                >
+                  <svg>
+                    instagram-icon.svg
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div
+              className="Footer__Column-sc-15u78g2-3 hcYYqs"
+            >
+              <h5
+                className="Footer__ColumnHeading-sc-15u78g2-5 cRYMch"
+              >
+                Quick Links
+              </h5>
+              <ul
+                className="Footer__LinkList-sc-15u78g2-6 bMOCnz"
+              >
+                <li
+                  className="Footer__LinkListItem-sc-15u78g2-7 dtamaj"
+                >
+                  <a
+                    className="Footer__Link-sc-15u78g2-8 enHbWa"
+                    href="/"
+                  >
+                    About Me
+                  </a>
+                </li>
+                <li
+                  className="Footer__LinkListItem-sc-15u78g2-7 dtamaj"
+                >
+                  <a
+                    className="Footer__Link-sc-15u78g2-8 enHbWa"
+                    href="#"
+                  >
+                    Services
+                  </a>
+                </li>
+                <li
+                  className="Footer__LinkListItem-sc-15u78g2-7 dtamaj"
+                >
+                  <a
+                    className="Footer__Link-sc-15u78g2-8 enHbWa"
+                    href="/CalendarPage"
+                  >
+                    Schedule
+                  </a>
+                </li>
+                <li
+                  className="Footer__LinkListItem-sc-15u78g2-7 dtamaj"
+                >
+                  <a
+                    className="Footer__Link-sc-15u78g2-8 enHbWa"
+                    href="#"
+                  >
+                    Testimonials
+                  </a>
+                </li>
+                <li
+                  className="Footer__LinkListItem-sc-15u78g2-7 dtamaj"
+                >
+                  <a
+                    className="Footer__Link-sc-15u78g2-8 enHbWa"
+                    href="#"
+                  >
+                    Newsletter
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div
+              className="Footer__Column-sc-15u78g2-3 hcYYqs"
+            >
+              <h5
+                className="Footer__ColumnHeading-sc-15u78g2-5 cRYMch"
+              >
+                Contact
+              </h5>
+              <ul
+                className="Footer__LinkList-sc-15u78g2-6 bMOCnz"
+              >
+                <li
+                  className="Footer__LinkListItem-sc-15u78g2-7 dtamaj"
+                >
+                  Cell: 484-373-9655
+                </li>
+                <li
+                  className="Footer__LinkListItem-sc-15u78g2-7 dtamaj"
+                >
+                  <a
+                    className="Footer__Link-sc-15u78g2-8 enHbWa"
+                    href="mailto:gia@communicationinaaction.com"
+                  >
+                    Email: gia@communicationinaaction.com
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            className="Footer__Divider-sc-15u78g2-17 hfAsUJ"
+          />
+          <div
+            className="Footer__CopyrightAndCompanyInfoRow-sc-15u78g2-14 Kqnq"
+          >
+            <div
+              className="Footer__CopyrightNotice-sc-15u78g2-15"
+            >
+              © Copyright 2020, Treact Inc.
+            </div>
+            <div
+              className="Footer__CompanyInfo-sc-15u78g2-16"
+            >
+              Communication in AACtion.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+`;

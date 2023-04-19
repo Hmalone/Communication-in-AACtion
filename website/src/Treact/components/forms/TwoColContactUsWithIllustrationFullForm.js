@@ -33,6 +33,11 @@ const Textarea = styled(Input).attrs({as: "textarea"})`
 
 const SubmitButton = tw(PrimaryButtonBase)`inline-block mt-8`
 
+
+function handelSubmit(){
+
+}
+
 export default ({
   subheading = "Contact Me",
   heading = <>Feel free to <span tw="text-primary-500">get in touch</span><wbr/> with me.</>,
@@ -61,7 +66,7 @@ export default ({
               <Input type="email" name="email" placeholder="Your Email Address" />
               <Input type="text" name="phone_number" placeholder="Phone Number" />
               <Textarea name="message" placeholder="Your Message Here" />
-              <SubmitButton type="submit">{submitButtonText}</SubmitButton>
+              <SubmitButton onSubmit={handelSubmit} type="submit">{submitButtonText}</SubmitButton>
             </Form>
           </TextContent>
         </TextColumn>
