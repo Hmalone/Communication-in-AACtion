@@ -1,8 +1,11 @@
 const mongoose = require("mongoose");
 
-exports.connect = function(){
+exports.connect = function(where){
+  let uri = "mongodb+srv://Hunter:HMpass@website.c5x0mfa.mongodb.net/?retryWrites=true&w=majority";
+  if(where == 'test')
+    uri = "mongodb+srv://Hunter:HMpass@website.c5x0mfa.mongodb.net/?retryWrites=true&w=majority";
   mongoose.connect(
-    "mongodb+srv://Hunter:HMpass@website.c5x0mfa.mongodb.net/?retryWrites=true&w=majority",
+    uri,
     {
       useNewUrlParser: true,
     }

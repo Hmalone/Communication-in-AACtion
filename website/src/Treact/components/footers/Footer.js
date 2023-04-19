@@ -31,6 +31,10 @@ const SocialLink = styled.a`
   }
 `;
 
+const CopyrightAndCompanyInfoRow = tw.div`pb-0 text-sm font-normal flex flex-col sm:flex-row justify-between items-center`
+const CopyrightNotice = tw.div``
+const CompanyInfo = tw.div``
+
 const Divider = tw.div`my-8 border-b-2 border-gray-800`
 export default () => {
   return (
@@ -84,6 +88,10 @@ export default () => {
           </Column>
         </FiveColumns>
         <Divider/>
+        <CopyrightAndCompanyInfoRow>
+          <CopyrightNotice>&copy; Copyright 2020, Treact Inc.</CopyrightNotice>
+          <CompanyInfo>Communication in AACtion.</CompanyInfo>
+        </CopyrightAndCompanyInfoRow>
       </Content>
     </Container>
   );

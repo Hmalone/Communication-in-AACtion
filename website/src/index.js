@@ -8,6 +8,7 @@ import ContactUs from 'Pages/ContactUs';
 import SignInPage from 'Pages/SignInPage';
 import SignUpPage from 'Pages/SignUpPage';
 import CalendarPage from 'Pages/CalendarPage';
+import AdminDash from "Pages/AdminDash";
 import { NavLink } from 'Treact/components/headers/light';
 import { Routes } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
@@ -24,6 +25,7 @@ root.render(
           <Route path='SignInPage' element={<SignInPage/>} />
           <Route path='SignUpPage' element={<SignUpPage/>} />
           <Route path='CalendarPage' element={<CalendarPage/>} />
+          <Route path="AccountPage" element={<AdminDash/>} />
         </Routes>
       </NavLink>
     </React.StrictMode>
