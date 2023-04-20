@@ -80,12 +80,15 @@ export default ({ roundedHeaderButton = false, logoLink, links, className, colla
       <NavLink href="/#">Testimonials</NavLink>
       <NavLink href="/#">Newsletter</NavLink>
       <NavLink href="/ContactUs">Contact Me</NavLink>
+      
       </NavLinks>,
     <NavLinks key={2}>
       <NavLink href="/SignInPage" tw="lg:ml-12!">
         Login
       </NavLink>
       <PrimaryLink css={roundedHeaderButton && tw`rounded-full`} href="/SignUpPage">Sign Up</PrimaryLink>
+      <NavLink href="/AccountPage">Settings</NavLink>
+      {/* need to configure so this only appears after signed in */}
     </NavLinks>
   ];
 

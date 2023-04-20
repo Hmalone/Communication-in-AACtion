@@ -13,6 +13,7 @@ import { NavLink } from 'Treact/components/headers/light';
 import { Routes } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route } from 'react-router-dom';
+import AccountPage from 'Pages/AccountPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -25,7 +26,8 @@ root.render(
           <Route path='SignInPage' element={<SignInPage/>} />
           <Route path='SignUpPage' element={<SignUpPage/>} />
           <Route path='CalendarPage' element={<CalendarPage/>} />
-          <Route path="AccountPage" element={<AdminDash/>} />
+          <Route path="AdminPage" element={<AdminDash/>} />
+          <Route path="AccountPage" element={<AccountPage/>} />
         </Routes>
       </NavLink>
     </React.StrictMode>
