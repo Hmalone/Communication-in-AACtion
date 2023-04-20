@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import tw from "twin.macro";
 import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
@@ -33,21 +33,48 @@ const Textarea = styled(Input).attrs({as: "textarea"})`
 
 const SubmitButton = tw(PrimaryButtonBase)`inline-block mt-8`
 
+const recEmail = "hunterjm427@gmail.com" //gia@communicationinaaction.com
 
-function handelSubmit(){
+export default function ContactForm(){
+  async function handleSubmit(e){
+    e.preventDefault();
+    var mail = {
+      from: firstName + " " + lastName,
+      to: recEmail,
+      subject: "New Contact Form Email!",
+      text: "Name: "+firstName+" "+lastName+ "\n"+
+            "Cell Number: "+cellNumber+"\n"+
+            "Message: "+message
+    }
+    transporter.sendMail(mail, (err, data) => {
+      if(err){
+        res.json({
+          status:'fail'
+        })
+      }else{
+        res.json({
+          status:'success'
+        })
+      }
+    })
+  }
 
-}
 
-export default ({
-  subheading = "Contact Me",
-  heading = <>Feel free to <span tw="text-primary-500">get in touch</span><wbr/> with me.</>,
-  description = "Please feel free to reach out with any questions or concerns, or if you are interested in scheduling an information meeting.",
-  submitButtonText = "Send",
-  formAction = "#",
-  formMethod = "get",
-  textOnLeft = true,
-}) => {
-  // The textOnLeft boolean prop can be used to display either the text on left or right side of the image.
+
+
+  const [firstName, setFristName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [cellNumber, setCellNumber] = useState('');
+  const [message, setMessage] = useState('');
+
+  const subheading = "Contact Me";
+  const heading = <>Feel free to <span tw="text-primary-500">get in touch</span><wbr/> with me.</>;
+  const description = "Please feel free to reach out with any questions or concerns, or if you are interested in scheduling an information meeting.";
+  const submitButtonText = "Send";
+  const formAction = "#";
+  const formMethod = "get";
+  const textOnLeft = true;
 
   return (
     <Container>
@@ -61,12 +88,12 @@ export default ({
             <Heading>{heading}</Heading>
             {description && <Description>{description}</Description>}
             <Form action={formAction} method={formMethod}>
-              <Input type="text" name="first_name" placeholder="First Name" />
-              <Input type="text" name="last_name" placeholder="Last Name" />
-              <Input type="email" name="email" placeholder="Your Email Address" />
-              <Input type="text" name="phone_number" placeholder="Phone Number" />
-              <Textarea name="message" placeholder="Your Message Here" />
-              <SubmitButton onSubmit={handelSubmit} type="submit">{submitButtonText}</SubmitButton>
+              <Input type="text" name="first_name" placeholder="First Name" onChange={e => setFristName(e.target.value)}/>
+              <Input type="text" name="last_name" placeholder="Last Name" onChange={e => setLastName(e.target.value)}/>
+              <Input type="email" name="email" placeholder="Your Email Address" onChange={e => setEmail(e.target.value)}/>
+              <Input type="text" name="phone_number" placeholder="Cell Number" onChange={e => setCellNumber(e.target.value)}/>
+              <Textarea name="message" placeholder="Your Message Here" onChange={e => setMessage(e.target.value)}/>
+              <SubmitButton onSubmit={handleSubmit} type="submit">{submitButtonText}</SubmitButton>
             </Form>
           </TextContent>
         </TextColumn>
