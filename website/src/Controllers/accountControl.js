@@ -109,3 +109,7 @@ exports.logout = function(req, res){
     req.session.account = null;
     res.redirect("/#")
 }
+
+//maybe just add account profile/view stuff in here?
+//need account email, phone, address (not sure that gets collected on the site?), and child name, age, and grade
+//also need past and upcoming appointments and related details for each
