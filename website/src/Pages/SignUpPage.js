@@ -28,30 +28,31 @@ const SubmitButton = styled.button`
   }
 `;
 
-/* 
-, {
-      method: "POST",
-      body: JSON.stringify({
-        email: email,
-        password: password,
-        firstName: firstName,
-        lastName: lastName,
-        address: address,
-        phoneNumber: cellNumber,
-        child: {
-          childName: childName,
-          childGrade: childGrade,
-          childAge: childAge
-        }  
-      })
-    }
-*/
-
-
 export default function AccountForm(){
   async function createAccount(){
-    let response = await fetch("/account");
-    let account = await response.json();
+    var data = {
+      email: email,
+      password: password,
+      firstName: firstName,
+      lastName: lastName,
+      cellNumber: cellNumber,
+      address: address
+    }
+    alert(JSON.stringify(data));
+    try{
+      let response = await fetch('/account', {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+      const result = response.json();
+      alert("Account Created.");
+      
+    } catch (error){
+      alert("Problem creating account. Error: ", error);
+    }
   }
   
   async function handleSubmit(e){
@@ -80,9 +81,6 @@ export default function AccountForm(){
   const [lastName, setLastName] = useState('');
   const [cellNumber, setCellNumber] = useState('');
   const [address, setAddress] = useState('');
-  const [childName, setChildName] = useState('');
-  const [childAge, setChildAge] = useState('');
-  const [childGrade, setChildGrade] = useState('');
   const headingText = "Create an Account";
   const submitButtonText = "Sign Up";
   const SubmitButtonIcon = SignUpIcon;
@@ -98,8 +96,6 @@ export default function AccountForm(){
                 <Input type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
                 <Input type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
                 <Input type="password" placeholder="Repeat Password" value={repassword} onChange={e => setRepassword(e.target.value)} />
-                <Input type="firstName" placeholder="First Name" value={firstName} onChange={e => setFristName(e.target.value)} />
-                <Input type="lastName" placeholder="Last Name" value={lastName} onChange={e => setLastName(e.target.value)} />
               </Form>
             </FormContainer>
           </MainContent>
@@ -108,11 +104,10 @@ export default function AccountForm(){
           <MainContent>
             <FormContainer>
               <Form onSubmit={handleSubmit}>
+                <Input type="firstName" placeholder="First Name" value={firstName} onChange={e => setFristName(e.target.value)} />
+                <Input type="lastName" placeholder="Last Name" value={lastName} onChange={e => setLastName(e.target.value)} />
                 <Input type="cellNumber" placeholder="Cell Number" value={cellNumber} onChange={e => setCellNumber(e.target.value)} />
                 <Input type="address" placeholder="Address" value={address} onChange={e => setAddress(e.target.value)}/>
-                <Input type="childName" placeholder="Child Name" value={childName} onChange={e => setChildName(e.target.value)}/>
-                <Input type="date" placeholder="Child Birthday" value={childAge} onChange={e => setChildAge(e.target.value)}/>
-                <Input type="childGrade" placeholder="Child Grade" value={childGrade} onChange={e => setChildGrade(e.target.value)}/>
                 <SubmitButton type="submit" >
                     <SubmitButtonIcon className="icon" />
                     <span className="text">{submitButtonText}</span>

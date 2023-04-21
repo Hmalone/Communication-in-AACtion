@@ -61,10 +61,7 @@ exports.postCreateOrUpdate = function(req,res){
     newAccount.firstName = req.body.firstName;
     newAccount.lastName = req.body.lastName;
     newAccount.address = req.body.address;
-    newAccount.phoneNumber = req.body.phoneNumber;
-    newAccount.child.childName = req.body.child.childName;
-    newAccount.child.childAge = req.body.child.childAge;
-    newAccount.child.childGrade = req.body.child.childGrade;
+    newAccount.phoneNumber = req.body.cellNumber;
 
 
     if(req.body.id){
@@ -84,8 +81,9 @@ exports.deleteOne = function(req,res){
 }
 
 exports.login = async function(req,res){
-    let email = req.body.txt_email;
-    let pwd = req.body.txt_password;
+    let email = req.body.email;
+    let pwd = req.body.password;
+    console.log(email +" "+ pwd);
     let account = await accountDB.login(email, pwd);
     
     console.log(account);

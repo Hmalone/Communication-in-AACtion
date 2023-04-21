@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import AnimationRevealPage from "Treact/helpers/AnimationRevealPage.js";
 import { Container as ContainerBase } from "Treact/components/misc/Layouts";
 import tw from "twin.macro";
 import styled from "styled-components";
 //import {css} from "styled-components/macro"; //eslint-disable-line
 import image from "../Images/Client_pic_1_PNG.png"
-//import illustration from "Treact/images/login-illustration.svg";
 import { ReactComponent as LoginIcon } from "feather-icons/dist/icons/log-in.svg";
 import Footer from "Treact/components/footers/Footer.js";
 import { Link } from "react-router-dom";
@@ -34,24 +33,48 @@ const IllustrationImage = styled.div`
   ${tw`m-12 xl:m-16 w-full max-w-sm bg-contain bg-center bg-no-repeat`}
 `;
 
-export default ({
-  illustrationImageSrc = image,
-  headingText = "Sign In to Account",
-  submitButtonText = "Sign In",
-  SubmitButtonIcon = LoginIcon,
-  forgotPasswordUrl = "#",
+export default function SignInForm(){
+  async function signInAccount(){
+    var data = {
+      email: email,
+      password: password,
+    }
+    try{
+      let response = await fetch('/dologin', {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+    } catch (error){
+      alert("Problem creating account. Error: ", error);
+    }
+  }
+  
+  async function handleSubmit(e){
+    e.preventDefault();
+    signInAccount();
+  }
 
-}) => (
-  <AnimationRevealPage>
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const illustrationImageSrc = image;
+  const headingText = "Sign In to Account";
+  const submitButtonText = "Sign In";
+  const SubmitButtonIcon = LoginIcon;
+  const forgotPasswordUrl = "#";
+  return (
+    <AnimationRevealPage>
     <Container>
       <Content>
         <MainContainer>
           <MainContent>
             <Heading>{headingText}</Heading>
             <FormContainer>
-              <Form>
-                <Input type="email" placeholder="Email" />
-                <Input type="password" placeholder="Password" />
+              <Form onSubmit={handleSubmit}>
+                <Input type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
+                <Input type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
                 <SubmitButton type="submit">
                   <SubmitButtonIcon className="icon" />
                   <span className="text">{submitButtonText}</span>
@@ -78,4 +101,5 @@ export default ({
     </Container>
     <Footer/>
   </AnimationRevealPage>
-);
+  );
+}
