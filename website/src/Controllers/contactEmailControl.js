@@ -1,5 +1,3 @@
-var express = require('express');
-var router = express.Router();
 var nodemailer = require('nodemailer');
 require('dotenv').config();
 
@@ -21,20 +19,20 @@ transporter.verify((error, success) => {
   }
 });
 
-router.post('/send', (req, res, next) => {
-  var firstName = req.body.firstName
-  var lastName = req.body.lastName
-  var email = req.body.email
-  var cellNumber = req.body.cellNumber
-  var message = req.body.message
-  var content = `Name: ${firstName} ${lastName}\n email: ${email} \n cell number: ${cellNumber} \n message: ${message} `
+exports.sendContactForm = async (req, res, next) => {
+  var firstName = req.body.firstName;
+  var lastName = req.body.lastName;
+  var email = req.body.email;
+  var cellNumber = req.body.cellNumber;
+  var message = req.body.message;
+  var content = `Name: ${firstName} ${lastName}\nEmail: ${email} \nCell number: ${cellNumber} \nMessage: ${message} `;
 
   var mail = {
     from: firstName+" "+lastName,
-    to: 'Hunterjm428@gmail.com',  
+    to: 'Hunterjm427@gmail.com',  
     subject: 'New Message from Contact Form',
     text: content
-  }
+  };
 
   transporter.sendMail(mail, (err, data) => {
     if (err) {
@@ -46,7 +44,5 @@ router.post('/send', (req, res, next) => {
         msg: 'success' 
       })
     }
-  })
-})
-
-module.exports = router;
+  });
+}

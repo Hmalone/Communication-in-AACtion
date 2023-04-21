@@ -37,23 +37,27 @@ const SubmitButton = tw(PrimaryButtonBase)`inline-block mt-8`
 export default function ContactForm(){
   async function handleSubmit(e){
     e.preventDefault();
-    axios({
-    method: "POST",
-    url: '/send',
-    data:{
+    var data = {
       firstName: firstName,
       lastName: lastName,
       email: email,
       cellNumber: cellNumber,
       message: message
-    }
-    }).then((response)=>{
-    if (response.data.msg === 'success'){
+      }
+    alert(JSON.stringify(data));
+    try{
+      let response = await fetch('/send', {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data),
+      });
+      const result = response.json();
       alert("Message Sent."); 
-    }else if(response.data.msg === 'fail'){
-        alert("Message failed to send.")
-    }
-    })
+    } catch (error){
+      alert("Message failed to send. Error: ", error);
+    }  
   }
 
   const [firstName, setFristName] = useState('');
@@ -79,7 +83,7 @@ export default function ContactForm(){
             {subheading && <Subheading>{subheading}</Subheading>}
             <Heading>{heading}</Heading>
             {description && <Description>{description}</Description>}
-            <Form onSubmit={handleSubmit}>
+            <Form onSubmit={handleSubmit} method="POST">
               <Input type="text" name="first_name" placeholder="First Name" onChange={e => setFristName(e.target.value)}/>
               <Input type="text" name="last_name" placeholder="Last Name" onChange={e => setLastName(e.target.value)}/>
               <Input type="email" name="email" placeholder="Your Email Address" onChange={e => setEmail(e.target.value)}/>

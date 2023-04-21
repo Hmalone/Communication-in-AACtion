@@ -1,4 +1,5 @@
 const express = require('express'); 
+const bp = require('body-parser');
 const morgan = require('morgan'); 
 const session = require('express-session');
 const cors = require('cors');
@@ -8,8 +9,8 @@ const contactEmailControl = require('./Controllers/contactEmailControl');
 
 const app = express(); 
 app.use(morgan('dev')); 
-app.use(express.urlencoded({extended:true}));
-app.use(express.json());
+app.use(bp.urlencoded({extended:true}));
+app.use(bp.json());
 app.use(cors());
 
 app.use(session({
@@ -21,13 +22,13 @@ app.use(session({
 }));
 
 // User Actions
-app.get('/account/:id',accountControl.get );
+app.get('/account/:id',accountControl.get);
 app.post('/account',accountControl.postCreateOrUpdate); 
 app.get('/deleteAccount/:id',accountControl.deleteOne); 
 app.post('/updateAccount',accountControl.postCreateOrUpdate);
 app.post('/dologin',accountControl.login); 
 app.get('/loggedAccount',accountControl.loggedUser);
 app.get('/logout',accountControl.logout);
-app.post('/send', contactEmailControl);
+app.post('/send', contactEmailControl.sendContactForm);
 
 exports.app = app;
