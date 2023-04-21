@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 
 exports.connect = function(where){
-  let uri = "mongodb+srv://Hunter:HMpass@website.c5x0mfa.mongodb.net/?retryWrites=true&w=majority";
+  let uri = process.env.DB_URI;
   if(where == 'test')
-    uri = "mongodb+srv://Hunter:HMpass@website.c5x0mfa.mongodb.net/?retryWrites=true&w=majority";
+    uri = process.env.DB_URI;
   mongoose.connect(
     uri,
     {
@@ -11,11 +11,8 @@ exports.connect = function(where){
       useUnifiedTopology: true,
     }
   );
-}
+} 
 
 exports.disconnect = async function(){
   await mongoose.connection.close();
 }
-
-
-

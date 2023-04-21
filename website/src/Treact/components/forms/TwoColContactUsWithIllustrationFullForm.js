@@ -5,6 +5,7 @@ import { css } from "styled-components/macro"; //eslint-disable-line
 import { SectionHeading, Subheading as SubheadingBase } from "Treact/components/misc/Headings.js";
 import { PrimaryButton as PrimaryButtonBase } from "Treact/components/misc/Buttons.js";
 import image from "../../../Images/Standing_PNG.png";
+import axios from 'axios';
 
 const Container = tw.div`relative`;
 const TwoColumn = tw.div`flex flex-col md:flex-row justify-between max-w-screen-xl mx-auto py-20 md:py-24`;
@@ -33,34 +34,27 @@ const Textarea = styled(Input).attrs({as: "textarea"})`
 
 const SubmitButton = tw(PrimaryButtonBase)`inline-block mt-8`
 
-const recEmail = "hunterjm427@gmail.com" //gia@communicationinaaction.com
-
 export default function ContactForm(){
   async function handleSubmit(e){
     e.preventDefault();
-    var mail = {
-      from: firstName + " " + lastName,
-      to: recEmail,
-      subject: "New Contact Form Email!",
-      text: "Name: "+firstName+" "+lastName+ "\n"+
-            "Cell Number: "+cellNumber+"\n"+
-            "Message: "+message
+    axios({
+    method: "POST",
+    url: '/send',
+    data:{
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      cellNumber: cellNumber,
+      message: message
     }
-    transporter.sendMail(mail, (err, data) => {
-      if(err){
-        res.json({
-          status:'fail'
-        })
-      }else{
-        res.json({
-          status:'success'
-        })
-      }
+    }).then((response)=>{
+    if (response.data.msg === 'success'){
+      alert("Message Sent."); 
+    }else if(response.data.msg === 'fail'){
+        alert("Message failed to send.")
+    }
     })
   }
-
-
-
 
   const [firstName, setFristName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -72,8 +66,6 @@ export default function ContactForm(){
   const heading = <>Feel free to <span tw="text-primary-500">get in touch</span><wbr/> with me.</>;
   const description = "Please feel free to reach out with any questions or concerns, or if you are interested in scheduling an information meeting.";
   const submitButtonText = "Send";
-  const formAction = "#";
-  const formMethod = "get";
   const textOnLeft = true;
 
   return (
@@ -87,13 +79,13 @@ export default function ContactForm(){
             {subheading && <Subheading>{subheading}</Subheading>}
             <Heading>{heading}</Heading>
             {description && <Description>{description}</Description>}
-            <Form action={formAction} method={formMethod}>
+            <Form onSubmit={handleSubmit}>
               <Input type="text" name="first_name" placeholder="First Name" onChange={e => setFristName(e.target.value)}/>
               <Input type="text" name="last_name" placeholder="Last Name" onChange={e => setLastName(e.target.value)}/>
               <Input type="email" name="email" placeholder="Your Email Address" onChange={e => setEmail(e.target.value)}/>
               <Input type="text" name="phone_number" placeholder="Cell Number" onChange={e => setCellNumber(e.target.value)}/>
               <Textarea name="message" placeholder="Your Message Here" onChange={e => setMessage(e.target.value)}/>
-              <SubmitButton onSubmit={handleSubmit} type="submit">{submitButtonText}</SubmitButton>
+              <SubmitButton type="submit">{submitButtonText}</SubmitButton>
             </Form>
           </TextContent>
         </TextColumn>

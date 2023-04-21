@@ -4,6 +4,7 @@ const session = require('express-session');
 const cors = require('cors');
 const memorystore = require('memorystore')(session);
 const accountControl = require('./Controllers/accountControl');
+const contactEmailControl = require('./Controllers/contactEmailControl');
 
 const app = express(); 
 app.use(morgan('dev')); 
@@ -27,5 +28,6 @@ app.post('/updateAccount',accountControl.postCreateOrUpdate);
 app.post('/dologin',accountControl.login); 
 app.get('/loggedAccount',accountControl.loggedUser);
 app.get('/logout',accountControl.logout);
+app.post('/send', contactEmailControl);
 
 exports.app = app;
