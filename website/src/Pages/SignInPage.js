@@ -7,7 +7,6 @@ import styled from "styled-components";
 import image from "../Images/Client_pic_1_PNG.png"
 import { ReactComponent as LoginIcon } from "feather-icons/dist/icons/log-in.svg";
 import Footer from "Treact/components/footers/Footer.js";
-import { Link } from "react-router-dom";
 
 const Container = tw(ContainerBase)`min-h-screen bg-primary-900 text-white font-medium flex justify-center -m-8`;
 const Content = tw.div`max-w-screen-xl m-0 sm:mx-20 sm:my-16 bg-white text-gray-900 shadow sm:rounded-lg flex justify-center flex-1`;

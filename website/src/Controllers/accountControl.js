@@ -1,37 +1,5 @@
 const accountDB = require("../DB/models/account");
-
-
-/*export class Child{
-    constructor(childName, childGrade, childBirthday){
-        this.childName = childName;
-        this.childGrade = childGrade;
-        this.childBirthday = childBirthday;
-    }
-    
-    getName(){
-        return this.childName;
-    }
-
-    getGrade(){
-        return this.childGrade;
-    }
-
-    getBirthday(){ 
-        return this.childBirthday;
-    }
-}
-
-export class Account{
-    constructor(email, password, firstName, lastName, address, phoneNumber, child, accountID){
-        this.email = email;
-        this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.address = address;
-        this.phoneNumber = phoneNumber;
-        this.child = child;
-    }
-}*/
+const passUtil = require('../util/PasswordUtil');
 
 exports.getAll = async function(req,res){
     res.status(200);
@@ -57,7 +25,7 @@ exports.get = function(req,res){
 exports.postCreateOrUpdate = function(req,res){
     let newAccount = {};
     newAccount.email = req.body.email;
-    newAccount.password = req.body.password;
+    newAccount.password = passUtil.hashPassword(req.body.password);
     newAccount.firstName = req.body.firstName;
     newAccount.lastName = req.body.lastName;
     newAccount.address = req.body.address;
@@ -82,7 +50,7 @@ exports.deleteOne = function(req,res){
 
 exports.login = async function(req,res){
     let email = req.body.email;
-    let pwd = req.body.password;
+    let pwd = passUtil.hashPassword(req.body.password);
     console.log(email +" "+ pwd);
     let account = await accountDB.login(email, pwd);
     
@@ -91,7 +59,7 @@ exports.login = async function(req,res){
     if(account != null){
         account.password = null;
         req.session.account = account;
-        res.redirect("/accountpage");
+        res.redirect("../AccountPage");
     }else{
         res.redirect('SignUpPage?error=1');
     }

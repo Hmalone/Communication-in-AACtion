@@ -62,7 +62,7 @@ export default () => {
                 <Link href="/">About Me</Link>
               </LinkListItem>
               <LinkListItem>
-                <Link href="#">Services</Link>
+                <Link href="/ServicesPage">Services</Link>
               </LinkListItem>
               <LinkListItem>
                 <Link href="/CalendarPage">Schedule</Link>

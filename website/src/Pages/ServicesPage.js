@@ -5,6 +5,9 @@ import tw from "twin.macro";
 import { css } from "styled-components/macro"; //eslint-disable-line
 import { SectionHeading, Subheading as SubheadingBase } from "Treact/components/misc/Headings.js";
 import { SectionDescription } from "Treact/components/misc/Typography.js";
+import AnimationRevealPage from "Treact/helpers/AnimationRevealPage.js";
+import HeaderBase from "Treact/components/headers/light.js";
+import Footer from "../Treact/components/footers/Footer.js";
 
 //import { ReactComponent as SvgDecoratorBlob3 } from "images/svg-decorator-blob-3.svg";
 
@@ -45,11 +48,7 @@ const Card = styled.div`
   }
 `;
 
-// const DecoratorBlob = styled(SvgDecoratorBlob3)`
-//   ${tw`pointer-events-none absolute right-0 bottom-0 w-64 opacity-25 transform translate-x-32 translate-y-48 `}
-// `;
-
-export default ({ cards = null, heading = "Our Offices", subheading = "Locations", description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." }) => {
+export default ({ cards = null, heading = "Our Services", description = "Below our the details on the kinds of services we provide. Feel free to create an account and scheduele an appointment for your child. If you have any questions you can reach out using the contact form." }) => {
   /*
    * This componets has an array of object denoting the cards defined below. Each object in the cards array can have the key (Change it according to your need, you can also add more objects to have more cards in this feature component) or you can directly pass this using the cards prop:
    *  1) title - the title of the card
@@ -59,37 +58,26 @@ export default ({ cards = null, heading = "Our Offices", subheading = "Locations
 
   const defaultCards = [
     {
-      title: "Secure",
-      description: "We strictly only deal with vendors that provide top notch security."
+      title: "Direct Therapy",
+      description: "1:1 sessions targeting speech sound and language disorders. In-home services available in Montgomery, Bucks, and Delaware Counties (PA) Teletherapy services available across the state of Pennsylvania"
     },
     { 
-      title: "24/7 Support",
-      description: "Lorem ipsum donor amet siti ceali ut enim ad minim veniam, quis nostrud."
+      title: "Coaching",
+      description: "Live feedback provided to communication partners for implementation of strategies. Available in-home and via teletherapy"
     },
     { 
-      title: "Reliable",
-      description: "Lorem ipsum donor amet siti ceali ut enim ad minim veniam, quis nostrud."
-    },
-    { 
-      title: "Easy",
-      description: "Lorem ipsum donor amet siti ceali ut enim ad minim veniam, quis nostrud."
-    },
-    { 
-      title: "Customizable",
-      description: "Lorem ipsum donor amet siti ceali ut enim ad minim veniam, quis nostrud."
-    },
-    { 
-      title: "Fast",
-      description: "Lorem ipsum donor amet siti ceali ut enim ad minim veniam, quis nostrud."
+      title: "Consultation",
+      description: "Brainstorming solutions to best support autonomous communication Review of synchronous (live) or asynchronous (video submission) observation. Collaboration with communication partners (siblings, grandparents, babysitters, etc.). IEP advocacy to ensure consistency of implementation strategies across environments."
     },
   ];
 
   if (!cards) cards = defaultCards;
 
   return (
+    <AnimationRevealPage>
     <Container>
+      <HeaderBase/>
       <ThreeColumnContainer>
-        {subheading && <Subheading>{subheading}</Subheading>}
         <Heading>{heading}</Heading>
         {description && <Description>{description}</Description>}
         <VerticalSpacer />
@@ -106,7 +94,8 @@ export default ({ cards = null, heading = "Our Offices", subheading = "Locations
           </Column>
         ))}
       </ThreeColumnContainer>
-      {/* <DecoratorBlob /> */}
+      <Footer/>
     </Container>
+    </AnimationRevealPage>
   );
 };

@@ -14,6 +14,7 @@ import { Routes } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route } from 'react-router-dom';
 import AccountPage from 'Pages/AccountPage';
+import ServicesPage from "Pages/ServicesPage";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -28,6 +29,7 @@ root.render(
           <Route path='CalendarPage' element={<CalendarPage/>} />
           <Route path="AdminPage" element={<AdminDash/>} />
           <Route path="AccountPage" element={<AccountPage/>} />
+          <Route path="ServicesPage" element={<ServicesPage/>} />
         </Routes>
       </NavLink>
     </React.StrictMode>

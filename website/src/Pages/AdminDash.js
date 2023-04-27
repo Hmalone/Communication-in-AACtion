@@ -4,7 +4,7 @@ import AnimationRevealPage from "Treact/helpers/AnimationRevealPage";
 import tw from "twin.macro";
 import Header from "Treact/components/headers/light.js";
 import Footer from "Treact/components/footers/Footer.js";
-import ContactDetails from "Treact/components/cards/ThreeColContactDetails.js";
+import ContactDetails from "Pages/ServicesPage.js";
 import AdminDashForm from "Treact/components/forms/TwoColAdminDash.js";
 
 const Address = tw.span`leading-relaxed`;

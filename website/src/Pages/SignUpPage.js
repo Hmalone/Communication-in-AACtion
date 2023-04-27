@@ -38,7 +38,6 @@ export default function AccountForm(){
       cellNumber: cellNumber,
       address: address
     }
-    alert(JSON.stringify(data));
     try{
       let response = await fetch('/account', {
         method: "POST",
@@ -48,8 +47,6 @@ export default function AccountForm(){
         body: JSON.stringify(data)
       });
       const result = response.json();
-      alert("Account Created.");
-      
     } catch (error){
       alert("Problem creating account. Error: ", error);
     }
