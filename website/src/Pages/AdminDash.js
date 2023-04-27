@@ -1,39 +1,52 @@
 import React from "react";
-//import AnimationRevealPage from "helpers/AnimationRevealPage.js";
-import AnimationRevealPage from "Treact/helpers/AnimationRevealPage";
+import AnimationRevealPage from "Treact/helpers/AnimationRevealPage.js";
+import { Container as ContainerBase } from "Treact/components/misc/Layouts";
 import tw from "twin.macro";
-import Header from "Treact/components/headers/light.js";
 import Footer from "Treact/components/footers/Footer.js";
 import ContactDetails from "Pages/ServicesPage.js";
 import AdminDashForm from "Treact/components/forms/TwoColAdminDash.js";
 
-const Address = tw.span`leading-relaxed`;
-const AddressLine = tw.span`block`;
-const Email = tw.span`text-sm mt-6 block text-gray-500`;
-const Phone = tw.span`text-sm mt-0 block text-gray-500`;
+const Container = tw(ContainerBase)`min-h-screen bg-primary-900 text-white font-medium flex justify-center -m-8`;
+const Content = tw.div`max-w-screen-xl m-0 sm:mx-20 sm:my-16 bg-white text-gray-900 shadow sm:rounded-lg flex justify-center flex-1`;
+const MainContainer = tw.div`lg:w-full xl:w-full p-6 sm:p-12`;
+const MainContent = tw.div`mt-16 grid grid-cols-4 gap-4 items-center bg-blue-100`;
+const Heading = tw.h1`col-span-3 bg-blue-100 text-2xl xl:text-3xl font-extrabold text-center`;
+const SubHeading = tw.h1`col-span-2 p-4 text-2xl xl:text-2xl font-extrabold rounded-lg border-2 border-indigo-500`;
+const Info = tw(SectionHeading)`mt-2 text-center text-gray-700 leading-snug xl:text-xl`;
 
-export default () => {
+export default function AccountView(){
   return (
-    <AnimationRevealPage>
-      <Header />
-      <AdminDashForm />
-      <ContactDetails
-        cards={[
-          {
-            title: "test in here",
-            description: (
-              <>
-                <Address>
-                  <AddressLine>Limerick, PA 19468</AddressLine>
-                </Address>
-                <Email>gia@email.com</Email>
-                <Phone>+1 (203) 101-1001</Phone>
-              </>
-            )
-          }
-        ]}
-      />
-      <Footer />
-    </AnimationRevealPage>
+      <AnimationRevealPage>
+        <Container>
+          <Content>
+            <MainContainer>
+              <Heading>Admin Dashboard</Heading>
+              <MainContent>
+                  <SubHeading>Pending Sessions
+                    <Info>Session Info</Info>
+                    <Info>Date</Info>
+                    <Info>Time</Info>
+                    <Info>Location</Info>
+                    <Info>Services</Info>
+                    <Info>Approve or Deny</Info>
+                  </SubHeading>
+                  <SubHeading>Pending Testimonials
+                    <Info>"The appointment was great"</Info>
+                    <Info>Approve or Deny</Info>
+                  </SubHeading>
+              
+                  <SubHeading>Upcoming Appointments
+                    <Info>info here </Info>
+                  </SubHeading>
+              
+                  <SubHeading>Recent Appointments
+                    <Info>info here </Info>
+                  </SubHeading>
+              </MainContent>
+            </MainContainer>
+          </Content>
+        </Container>
+        <Footer/>
+      </AnimationRevealPage>
   );
-};
+}

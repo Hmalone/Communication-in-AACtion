@@ -11,7 +11,7 @@ const Content = tw.div`max-w-screen-xl m-0 sm:mx-20 sm:my-16 bg-white text-gray-
 const MainContainer = tw.div`lg:w-full xl:w-full p-6 sm:p-12`;
 const MainContent = tw.div`mt-16 grid grid-cols-4 gap-4 items-center bg-blue-100`;
 const Heading = tw.h1`col-span-3 bg-blue-100 text-2xl xl:text-3xl font-extrabold text-center`;
-const SubHeading = tw.h1`col-span-2 text-2xl xl:text-2xl font-extrabold rounded-lg border-2 border-indigo-500`;
+const SubHeading = tw.h1`col-span-2 p-4 text-2xl xl:text-2xl font-extrabold rounded-lg border-2 border-indigo-500`;
 const Info = tw(SectionHeading)`mt-2 text-center text-gray-700 leading-snug xl:text-xl`;
 
 export default function AccountView(){
