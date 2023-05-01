@@ -4,8 +4,9 @@ import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
 import { SectionHeading, Subheading as SubheadingBase } from "Treact/components/misc/Headings.js";
 import { PrimaryButton as PrimaryButtonBase } from "Treact/components/misc/Buttons.js";
-import TeamIllustrationSrc from "images/team-illustration-2.svg";
-import {ReactComponent as SvgDotPattern } from "images/dot-pattern.svg"
+import TeamIllustrationSrc from "Treact/images/team-illustration-2.svg";
+import {ReactComponent as SvgDotPattern } from "Treact/images/dot-pattern.svg"
+import image from "../../../Images/Laptop_PNG.png"
 
 const Container = tw.div`relative`;
 const TwoColumn = tw.div`flex flex-col md:flex-row justify-between max-w-screen-xl mx-auto py-20 md:py-24 items-center`;
@@ -41,16 +42,15 @@ const PrimaryButton = styled(PrimaryButtonBase)(props => [
 
 
 export default ({
-  subheading = "Our Expertise",
   heading = (
     <>
-      Designed & Developed by <span tw="text-primary-500">Professionals.</span>
+      About <span tw="text-primary-500"></span>
     </>
   ),
-  description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  description = "Giovanna (Gia) is a speech language pathologist specializing in implementing communication systems for children with complex communication needs.  In child-led therapy sessions, she supports children using a total communication approach with a focus on connection and autonomy.  She is passionate about supporting children and their families on their journey. Gia is a certified member of the American Speech-Language and Hearing Association (ASHA) and holds licensure as a speech-language pathologist in the state of Pennsylvania. Gia provides direct therapy and consultative services in home and via HIPAA compliant teleplatform.",
   primaryButtonText = "Learn More",
   primaryButtonUrl = "https://timerse.com",
-  imageSrc = TeamIllustrationSrc,
+  imageSrc = image,
   buttonRounded = true,
   imageRounded = true,
   imageBorder = false,
@@ -65,20 +65,16 @@ export default ({
   return (
     <Container>
       <TwoColumn>
+      <TextColumn textOnLeft={textOnLeft}>
+          <TextContent>
+            <Heading>{heading}</Heading>
+            <Description>{description}</Description>
+          </TextContent>
+        </TextColumn>
         <ImageColumn>
           <Image css={imageCss} src={imageSrc} imageBorder={imageBorder} imageShadow={imageShadow} imageRounded={imageRounded}/>
           {imageDecoratorBlob && <DecoratorBlob css={imageDecoratorBlobCss} />}
         </ImageColumn>
-        <TextColumn textOnLeft={textOnLeft}>
-          <TextContent>
-            <Subheading>{subheading}</Subheading>
-            <Heading>{heading}</Heading>
-            <Description>{description}</Description>
-            <PrimaryButton buttonRounded={buttonRounded} as="a" href={primaryButtonUrl}>
-              {primaryButtonText}
-            </PrimaryButton>
-          </TextContent>
-        </TextColumn>
       </TwoColumn>
     </Container>
   );

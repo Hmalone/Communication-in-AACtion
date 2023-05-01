@@ -54,6 +54,7 @@ export default function SignInForm(){
   async function handleSubmit(e){
     e.preventDefault();
     signInAccount();
+    
   }
 
   const [email, setEmail] = useState('');

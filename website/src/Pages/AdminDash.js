@@ -4,8 +4,6 @@ import { Container as ContainerBase } from "Treact/components/misc/Layouts";
 import tw from "twin.macro";
 import styled from "styled-components";
 import Footer from "Treact/components/footers/Footer.js";
-import ContactDetails from "Pages/ServicesPage.js";
-import AdminDashForm from "Treact/components/forms/TwoColAdminDash.js";
 import { SectionHeading } from "Treact/components/misc/Headings";
 
 const Container = tw(ContainerBase)`min-h-screen bg-primary-900 text-white font-medium flex justify-center -m-8`;
@@ -34,7 +32,6 @@ export default function AccountView(){
 
   async function handleNewsletter(e){
     e.preventDefault();
-    alert(image.name);
     var data = {
       message: message,
       image: image

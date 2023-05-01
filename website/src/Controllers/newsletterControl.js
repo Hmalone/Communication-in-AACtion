@@ -18,5 +18,4 @@ exports.postCreateOrUpdate = function(req,res){
     }else{
         newsletterDB.create(newNewsletter);
     }
-    res.redirect("#");
 }

@@ -14,6 +14,9 @@ import AnimationRevealPage from "Treact/helpers/AnimationRevealPage";
 import Header from "Treact/components/headers/light.js";
 import Footer from "Treact/components/footers/Footer.js";
 import { getNewsletters } from "Util/getNewsletters";
+import image1 from "../Images/Client_pic_1_PNG.png";
+import image2 from "../Images/Laptop_PNG.png";
+import image3 from "../Images/Standing_PNG.png";
 
 import "slick-carousel/slick/slick.css";
 
@@ -75,7 +78,28 @@ const DecoratorBlob2 = tw(
 
 
 export default function Newsletter(){
-    const testimonials = getNewsletters();
+    //const testimonials = getNewsletters();
+    let testimonials = [
+      {
+        imageSrc: image1,
+        quote:
+          "Online sessions are a great way for me to use technology and teach your children from the comfort of our homes.",
+        customerName: "2/17/22"
+      },
+      {
+        imageSrc: image2,
+        quote:
+          "Even over the summer when school is out, my services are available so that coaching and therapy are year round.",
+        customerName: "7/30/22"
+      },
+      {
+        imageSrc: image3,
+        quote:
+          "Bring in the warmer weather with Gia Adornetto Speech and Language Therapy LLC.",
+        customerName: "4/3/23"
+      }
+    ]
+
     return (
     <AnimationRevealPage>
     <Header />
@@ -115,12 +139,3 @@ export default function Newsletter(){
     </AnimationRevealPage>
     );
 };
-
-
-/*export default () => {
-  /*
-   * You can modify the testimonials shown by modifying the array below
-   * You can add or remove objects from the array as you need.
-    {
-          
-   */

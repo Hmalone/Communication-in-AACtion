@@ -8,6 +8,7 @@ const multer = require('multer');
 const accountControl = require('./Controllers/accountControl');
 const contactEmailControl = require('./Controllers/contactEmailControl');
 const newsletterControl = require('./Controllers/newsletterControl');
+const testimonialControl = require('./Controllers/testimonialControl');
 const calendarControl = require('./Controllers/calendarControl');
 
 const app = express(); 
@@ -36,6 +37,8 @@ app.get('/logout',accountControl.logout);
 app.post('/send', contactEmailControl.sendContactForm);
 app.post('/newsletter', newsletterControl.postCreateOrUpdate);
 app.get('/allNewsletters', newsletterControl.getAll);
+app.post('/testimonial', testimonialControl.postCreateOrUpdate);
+app.get('/allTestimonials', testimonialControl.getAll);
 app.post('/calendar', calendarControl.postCreateOrUpdate);
 
 exports.app = app;
