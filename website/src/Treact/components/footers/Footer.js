@@ -71,7 +71,7 @@ export default () => {
                 <Link href="#">Testimonials</Link>
               </LinkListItem>
               <LinkListItem>
-                <Link href="#">Newsletter</Link>
+                <Link href="/NewsletterPage">Newsletter</Link>
               </LinkListItem>
             </LinkList>
           </Column>

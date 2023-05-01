@@ -15,6 +15,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route } from 'react-router-dom';
 import AccountPage from 'Pages/AccountPage';
 import ServicesPage from "Pages/ServicesPage";
+import Newsletter from 'Pages/NewsletterPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -30,6 +31,7 @@ root.render(
           <Route path="AdminPage" element={<AdminDash/>} />
           <Route path="AccountPage" element={<AccountPage/>} />
           <Route path="ServicesPage" element={<ServicesPage/>} />
+          <Route path="NewsletterPage" element={<Newsletter/>} />
         </Routes>
       </NavLink>
     </React.StrictMode>

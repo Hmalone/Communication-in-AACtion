@@ -1,5 +1,4 @@
 import React from "react";
-//import AnimationRevealPage from "helpers/AnimationRevealPage.js";
 import AnimationRevealPage from "Treact/helpers/AnimationRevealPage";
 import Header from "Treact/components/headers/light.js";
 import Footer from "Treact/components/footers/Footer.js";
