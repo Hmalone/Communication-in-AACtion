@@ -1,23 +1,27 @@
 const mongoose = require("mongoose");
 
 const CalendarSchema = new mongoose.Schema({
-    scheduleId: {
-        type: String,
-        required: true,
-    },
     customer: {
         type: String,
         required: true,
     },
-    location: {
+    childName: {
         type: String,
         required: true,
     },
     date: {
-        type: Date,
+        type: String,
+        required: true,
+    },
+    time: {
+        type: String,
         required: true,
     },
     service: {
+        type: String,
+        required: true,
+    },
+    location: {
         type: String,
         required: true,
     }

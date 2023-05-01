@@ -23,12 +23,12 @@ exports.get = function(req,res){
 
 exports.postCreateOrUpdate = function(req,res){
     let newAppointment = {};
-    // newAppointment.scheduleID;
     newAppointment.customer = req.body.customer;
-    newAppointment.location = req.body.location;
+    newAppointment.childName = req.body.childName;
     newAppointment.date = req.body.date;
-    //figure out data type for date and where/how to access it
+    newAppointment.time = req.body.time;
     newAppointment.service = req.body.service;
+    newAppointment.location = req.body.location;
 
     if(req.body.id){
         console.log("Update appointment");

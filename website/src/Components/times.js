@@ -35,24 +35,6 @@ function Times(props) {
         setEvent(e.target.innerText);
     }
 
-    async function createAppointment(d){
-        var data = {
-          date: d
-        }
-        alert("testing in here");
-        try{
-          let response = await fetch('/calendar', {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
-          });
-          const result = response.json();
-        } catch (error){
-          alert("Problem creating appointment. Error: ", error);
-        }
-    }
     //maybe redo the structure of time.map below
     //iterate through time array and display for each seperate time
     //will probably make it easier to get the time for creating an appointment
@@ -67,15 +49,9 @@ function Times(props) {
                     <Button onClick={(e)=> displayInfo(e)}> {appointments} </Button>
                 </Phrase1>
             )})}
-            <Phrase2>
-                {info ? `Your selected appointment is for ${event} ${props.date.toDateString()}` : null}
-                {/*Work in here to connect backend data; when clicking a button for each time, print the selected date */}
-            </Phrase2>
-            <Phrase2>
-                {info ? <ConfirmButton onClick={createAppointment(props.date.toDateString())}>Confirm Appointment?</ConfirmButton> : null}
-            </Phrase2>
         </div>
     )
 }
 
 export default Times;
+
