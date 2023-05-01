@@ -39,7 +39,7 @@ export default ({
   imageSrc = image,
   imageDecoratorBlob = true,
   testimonial = {
-    quote: "Desired quote goes here.",
+    quote: "Let's get started!",
     customerName: "Gia Adornetto"
   }
 }) => {
