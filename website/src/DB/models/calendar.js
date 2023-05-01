@@ -27,7 +27,7 @@ const CalendarSchema = new mongoose.Schema({
     }
 });
   
-const calendarModel = mongoose.model("Calendar", CalendarSchema);
+const calendarModel = mongoose.model("calendar", CalendarSchema);
   
 exports.readAll = async function(){
     let appointments = await calendarModel.find();
