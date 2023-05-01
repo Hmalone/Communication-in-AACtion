@@ -7,6 +7,7 @@ import styled from "styled-components";
 //import illustration from "Treact/images/signup-illustration.svg";
 import { ReactComponent as SignUpIcon } from "feather-icons/dist/icons/user-plus.svg";
 import Footer from "Treact/components/footers/Footer.js";
+import { redirect, useNavigate } from "react-router-dom";
 
 
 const Container = tw(ContainerBase)`min-h-screen bg-primary-900 text-white font-medium flex justify-center -m-8`;
@@ -29,6 +30,7 @@ const SubmitButton = styled.button`
 `;
 
 export default function AccountForm(){
+  const navigate = useNavigate();
   async function createAccount(){
     var data = {
       email: email,
@@ -47,6 +49,7 @@ export default function AccountForm(){
         body: JSON.stringify(data)
       });
       const result = response.json();
+      navigate('/AccountPage');
     } catch (error){
       alert("Problem creating account. Error: ", error);
     }

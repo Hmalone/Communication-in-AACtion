@@ -8,13 +8,14 @@ const multer = require('multer');
 const accountControl = require('./Controllers/accountControl');
 const contactEmailControl = require('./Controllers/contactEmailControl');
 const newsletterControl = require('./Controllers/newsletterControl');
+const calendarControl = require('./Controllers/calendarControl');
 
 const app = express(); 
 app.use(morgan('dev')); 
 app.use(bp.urlencoded({extended:true}));
 app.use(bp.json());
 app.use(cors());
-app.use(multer());
+//app.use(multer());
 
 app.use(session({
     secret: 'Pineapple - Guava - Orange',
@@ -35,5 +36,6 @@ app.get('/logout',accountControl.logout);
 app.post('/send', contactEmailControl.sendContactForm);
 app.post('/newsletter', newsletterControl.postCreateOrUpdate);
 app.get('/allNewsletters', newsletterControl.getAll);
+app.post('/calendar', calendarControl.postCreateOrUpdate);
 
 exports.app = app;

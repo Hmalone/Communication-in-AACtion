@@ -16,6 +16,8 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import AccountPage from 'Pages/AccountPage';
 import ServicesPage from "Pages/ServicesPage";
 import Newsletter from 'Pages/NewsletterPage';
+import Testimonials from 'Pages/TestimonialsPage';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -32,6 +34,7 @@ root.render(
           <Route path="AccountPage" element={<AccountPage/>} />
           <Route path="ServicesPage" element={<ServicesPage/>} />
           <Route path="NewsletterPage" element={<Newsletter/>} />
+          <Route path="TestimonialsPage" element={<Testimonials/>} />
         </Routes>
       </NavLink>
     </React.StrictMode>
