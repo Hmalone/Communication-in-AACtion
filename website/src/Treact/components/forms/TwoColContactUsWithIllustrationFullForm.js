@@ -5,11 +5,7 @@ import { css } from "styled-components/macro"; //eslint-disable-line
 import { SectionHeading, Subheading as SubheadingBase } from "Treact/components/misc/Headings.js";
 import { PrimaryButton as PrimaryButtonBase } from "Treact/components/misc/Buttons.js";
 import image from "../../../Images/Standing_PNG.png";
-<<<<<<< HEAD
-//import axios from 'axios';
-=======
 import { useNavigate } from "react-router-dom";
->>>>>>> 3bb55a97f8bd39647c46ab98d882cc425950616c
 
 const Container = tw.div`relative`;
 const TwoColumn = tw.div`flex flex-col md:flex-row justify-between max-w-screen-xl mx-auto py-20 md:py-24`;
