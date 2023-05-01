@@ -31,11 +31,7 @@ const CalendarContainer = styled.div`
         border-radius: 3px;
         `; //background-color: #d4f7d4;
 
-export default ({
-    heading1 = "Schedule",
-    heading2 = "Available Appointments"
-}
-) => {
+export default () => {
     const [date, setDate] = useState(new Date())
     const [showTime, setShowTime] = useState(false);
 
@@ -46,7 +42,7 @@ export default ({
             <TwoColumn>
                 <TextColumn>
                     <div>
-                        <Heading1>{heading1}</Heading1>
+                        <Heading1>Schedule</Heading1>
                         <div>
                             <CalendarContainer>
                                 <Calendar calendarType = 'US' onChange={setDate} value={date} onClickDay={() => setShowTime(true)}/>
@@ -56,7 +52,7 @@ export default ({
                 </TextColumn> 
                 <TextColumn>
                     <div>
-                    <Heading2>{heading2}</Heading2>
+                        <Heading2>Available Appointments</Heading2>
                         <Phrase>{date.toDateString()}</Phrase>
                         <Times showTime={showTime} date={date}/>
                     </div>

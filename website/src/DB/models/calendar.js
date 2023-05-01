@@ -5,53 +5,54 @@ const CalendarSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    mondayTimes:{
-        type: Array,
+    customer: {
+        type: String,
+        required: true,
     },
-    tuesdayTimes:{
-        type: Array,
+    location: {
+        type: String,
+        required: true,
     },
-    wednesdayTimes:{
-        type: Array,
+    date: {
+        type: Date,
+        required: true,
     },
-    thursdayTimes:{
-        type: Array,
-    },
-    fridayTimes:{
-        type: Array,
+    service: {
+        type: String,
+        required: true,
     }
 });
   
 const calendarModel = mongoose.model("Calendar", CalendarSchema);
   
 exports.readAll = async function(){
-    let calendars = await calendarModel.find();
-    return calendars;
+    let appointments = await calendarModel.find();
+    return appointments;
 }
 
 exports.read = async function(id){
-    let calendar = await calendarModel.findById(id);
-    return calendar;
+    let appointment = await calendarModel.findById(id);
+    return appointment;
 }
 
-exports.create = async function(newCalendar){
-    const calendar = new calendarModel(newCalendar);
-    await calendar.save();
-    return calendar;
+exports.create = async function(newAppointment){
+    const appointment = new calendarModel(newAppointment);
+    await appointment.save();
+    return appointment;
 }
 
 exports.del = async function(id){
-    let calendar = await calendarModel.findByIdAndDelete(id);
-    return calendar;
+    let appointment = await calendarModel.findByIdAndDelete(id);
+    return appointment;
 } 
 
 exports.deleteAll = async function(){
     await calendarModel.deleteMany();
 }
 
-exports.update = async function(id, updatedCalendar){
-    let calendar = await calendarModel.findByIdAndUpdate(id, updatedCalendar);
-    await calendar.save();
-    return calendar;
+exports.update = async function(id, updatedAppointment){
+    let appointment = await calendarModel.findByIdAndUpdate(id, updatedAppointment);
+    await appointment.save();
+    return appointment;
 }
 
